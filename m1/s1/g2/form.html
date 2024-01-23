@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--
+      i form hanno 2 possibili method:
+
+      GET -> sporca l'indirzzo, cioè aggiunge dei query params contenti i 
+      dati inviati. Ha un limite alla quantità di dati inviabili; 
+      viene impostato in automatico se non inseriamo un parametro
+      manualmente
+
+      POST -> Non sporca l'indirizzo e nasconde i dati inviati, non risente
+      dei limiti della quantità di dati(sempre utilizzato a meno che non 
+      si abbia la necessita di portare un dato in un altra pagina, in
+       quel caso usiamo get)
+
+    -->
+    <form method="get" action="">
+      <input type="text" name="nome" placeholder="Nome" />
+      <input type="password" name="pass" placeholder="Password" />
+      <input type="email" placeholder="email" />
+      <label for="consenso">Acconsento al trattamento dei dati</label>
+      <input id="consenso" type="checkbox" />
+      <hr color="red" />
+
+      <!-- non utilizzare select per valori sensibili -->
+      <select>
+        <option value="">-- Seleziona --</option>
+        <option value="roma">Roma</option>
+        <option value="milano">Milano</option>
+      </select>
+      <textarea cols="30" rows="10"></textarea>
+
+      <button>Invia</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        width: 100%;
+      }
+      td {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Cognome</th>
+          <th>Anni</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Mario</td>
+          <td>Rossi</td>
+          <td>30</td>
+        </tr>
+        <tr>
+          <td>Anna</td>
+          <td>Rossi</td>
+          <td>x25</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <td>Numero utenti</td>
+        <td>2</td>
+      </tfoot>
+    </table>
+
+    <hr />
+
+    <table>
+      <tr>
+        <td>cella1</td>
+        <td rowspan="2">cella2 - 5</td>
+        <td>cella3</td>
+      </tr>
+      <tr>
+        <td>cella4</td>
+
+        <td>cella6</td>
+      </tr>
+      <tr>
+        <td colspan="2">cella7 - 8</td>
+
+        <td>cella9</td>
+      </tr>
+    </table>
+  </body>
+</html>
