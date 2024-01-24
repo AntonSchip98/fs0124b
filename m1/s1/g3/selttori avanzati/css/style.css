@@ -1,0 +1,46 @@
+/*selettore figli diretti */
+#genitore > p {
+  color: red;
+}
+
+/*seleziona il primo p successivo ed adiacente al blockquote (si usa raramente)*/
+blockquote + p {
+  border: 4px solid green;
+}
+
+/*hover,active, visited sono pseudoclassi*/
+a {
+  color: black;
+}
+a:hover {
+  background-color: red;
+  transition: 0.5s;
+}
+
+a:visited {
+  color: black;
+}
+
+/* codici tabella*/
+table {
+  width: 100%;
+}
+
+td {
+  border: 1px solid black;
+}
+
+tr:nth-of-type(odd) {
+  background-color: red;
+}
+
+tr:nth-of-type(2) td:first-child {
+  font-weight: bold;
+}
+
+/* pseudo elementi (non è realmente presente nella pagina) ::*/
+tr td:first-child:not(.escluso)::after {
+  content: "#";
+  background-color: blue;
+  color: yellow;
+}

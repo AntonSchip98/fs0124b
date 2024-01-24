@@ -1,0 +1,53 @@
+div {
+  /* peso: 1 */
+  color: red;
+  background-color: blue;
+}
+
+/* cosi prenderemo solo gli span contenuti da h2, inserendo uno spazio,
+ facendo in modo che span sia figlio di h2*/
+h2 span {
+  /* peso: 2 */
+  text-decoration: underline;
+}
+/* utilizzare solo i tag è una pratica molto imprecisa,
+ utilizzarli solo quando dobbiamo fare una modifica globale e sicura,
+ utilizzare il meno possibile*/
+
+/* id # */
+#colore-verde {
+  /* peso: 100 */
+  color: green;
+}
+
+/* a parità di specifità vincese sempre chi appare dopo , l'ultima regola che appare vince 
+sempre*/
+/* class . */
+.colore-giallo {
+  /* peso: 10 */
+  color: yellow;
+}
+
+.colore-blu {
+  /* peso: 10 */
+  color: blue;
+}
+
+/* selezione con multipli selettori per aumentare la specificità */
+
+.colore-giallo.colore-blu {
+  /* peso: 20 */
+  font-size: 30px;
+}
+
+h3.colore-giallo.colore-blu {
+  /* peso: 21 */
+  font-size: 45px;
+}
+
+/* important è una sconfitta (non utilizzare nei compiti):
+1. stiamo modificando codice di terzi;
+2. quando è troppo tardi ed è una modifica temporanea*/
+h3 {
+  color: red !important;
+}
