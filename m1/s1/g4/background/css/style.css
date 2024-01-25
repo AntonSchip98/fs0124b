@@ -1,0 +1,29 @@
+#box {
+  /* imposto un immagine come back ground di un div */
+  background-image: url(../img/focaccia.png);
+  height: 700px;
+  /* cambio dimensione dell immagine,non tagliando niente dall immagine */
+  background-size: contain;
+  /* cambio ripetizione dell immagine */
+  background-repeat: no-repeat;
+  /* cambio la posizione dell immagine */
+  background-position: center;
+  border: 1px solid black;
+}
+#box2 {
+  /* imposto un immagine come back ground di un div */
+  background-image: url(https://picsum.photos/200/300);
+  height: 200px;
+  /* copri tutta l aria anche se perdi parte dell immagine, usato più spesso come back-gorund */
+  background-size: cover;
+  /* cambio ripetizione dell immagine */
+  background-repeat: no-repeat;
+  /* cambio la posizione dell immagine */
+  background-position: bottom;
+  border: 1px solid black;
+}
+
+#box3 {
+  height: 200px;
+  background-image: linear-gradient(30deg, salmon, purple);
+}

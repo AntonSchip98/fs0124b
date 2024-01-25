@@ -1,0 +1,18 @@
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]:checked + ul {
+  height: 100px;
+}
+
+ul {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.5s;
+}
+li {
+  background-color: blueviolet;
+  border: 1px solid black;
+  padding: 5px;
+}
