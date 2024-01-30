@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr = ["", 0, false, {}, []];
+
+      {
+        let nomiPizze = ["margherita", "diavola"];
+
+        // lettura da un array:
+        console.log(nomiPizze[0]);
+
+        //riassegnamento:
+        nomiPizze[0] = "Capricciosa";
+      }
+      {
+        let numeri = [1, 45, 2, 59, 60];
+        console.log(numeri);
+        numeri.sort();
+        numeri.reverse();
+        console.log(numeri);
+
+        numeri.push(111);
+        console.log(numeri);
+
+        console.log(numeri.length);
+        console.log(numeri[numeri.length - 1]);
+      }
+    </script>
+  </body>
+</html>

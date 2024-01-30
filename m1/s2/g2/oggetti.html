@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const obj = {
+        string: "",
+        number: 0,
+        boolean: true,
+        oggetto: {},
+        array: [],
+      };
+
+      {
+        let pizza = {
+          gusto: "Margherita",
+          prezzo: 5,
+          disponibile: true,
+          "lista ingredienti": "mozzarella , pomodoro",
+        };
+        //  scritturea di una proprietà
+        pizza.gusto = "Diavola";
+
+        // lettura di una proprietà (DOT NOTATION)
+        console.log(pizza.gusto);
+
+        // lettura di un valore, da una prop il cui nome non rispatta la sintassi di JavaScript
+        console.log(pizza["lista ingredienti"]);
+      }
+
+      {
+        let pizza = {
+          gusto: "Margherita",
+          prezzo: 5,
+          disponibile: true,
+        };
+
+        let pizza2 = {
+          gusto: "Divaola",
+          prezzo: 1,
+          disponibile: true,
+        };
+
+        function Pizza() {
+          (this.gusto = "Margherita"),
+            (this.prezzo = 1),
+            (this.disponibile = true);
+        }
+
+        let margherita = new Pizza();
+        let diavola = new Pizza();
+        diavola.gusto = "Diavola";
+
+        document.write(margherita); //non posso mostrare a schermo l'oggetto intero, devo
+        //selezionare una proprietà:
+        document.write(margherita.gusto);
+
+        console.log(margherita, diavola);
+      }
+    </script>
+  </body>
+</html>

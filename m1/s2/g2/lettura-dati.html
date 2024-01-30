@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let oggetto = {
+        figlio: {
+          prop1: "",
+          prop2: [1, 2, 4, 5, 7, 8],
+        },
+        arr: [
+          1,
+          2,
+          4,
+          ["a", "b", "c", [{ nome: "Mario" }, { nome: "Carlo" }]],
+          5,
+          7,
+          8,
+          9,
+        ],
+      };
+      console.log(oggetto.figlio.prop2[2]);
+      console.log(oggetto.arr[3][2]);
+      console.log(oggetto.arr[3][3][0].nome);
+
+      console.log(Array.isArray([]));
+    </script>
+  </body>
+</html>
