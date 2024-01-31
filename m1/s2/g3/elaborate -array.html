@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arrPizze = ["Margherita", "Diavola", "Capricciosa"];
+      for (let i = 0; i < arrPizze.length; i++) {
+        console.log(arrPizze[i]);
+      }
+
+      let numeri = [14, 5, 2, 4, 7, 8, 9];
+      let somma = 0;
+      for (let i = 0; i < numeri.length; i++) {
+        somma += numeri[i];
+      }
+      console.log(somma);
+
+      let res = [];
+      for (let i = 0; i < numeri.length; i++) {
+        if (numeri[i] > 5) {
+          res.push(numeri[i]);
+        }
+        console.log(res);
+      }
+
+      let users = [
+        {
+          nome: "Mario",
+          cognome: "Rossi",
+        },
+        {
+          nome: "Mario2",
+          cognome: "Rossi2",
+        },
+      ];
+      let nomi = [];
+      for (let i = 0; i < users.length; i++) {
+        nomi.push(users[i].cognome);
+      }
+      console.log(nomi);
+    </script>
+  </body>
+</html>

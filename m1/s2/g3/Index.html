@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let users = [
+        {
+          nome: "Mario",
+          cognome: "Rossi",
+        },
+        {
+          nome: "Mario2",
+          cognome: "Rossi2",
+        },
+      ];
+
+      console.log(users.map((el) => el.nome));
+      console.log(users.filter((el) => el.nome == "Mario"));
+    </script>
+  </body>
+</html>
