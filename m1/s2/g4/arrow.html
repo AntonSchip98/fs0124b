@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Arrow function
+      let mostraSaluto = () => {
+        console.log("ciao");
+        console.log("ciao");
+        console.log("ciao");
+        console.log("ciao");
+        console.log("ciao");
+      };
+
+      //valida, possiamo omettere le graffe perche operiamo su una sola riga da eseguire,
+      // se omettiamo le graffe il return è sott'inteso
+      let restituisciSaluto = () => "ciao";
+      console.log(restituisciSaluto());
+
+      let somma = () => {
+        a++;
+        b++;
+        return a + b;
+      };
+
+      //se c'è un solo parametro anche le parentesi tonde sono superflue
+      let raddoppia = (a) => a * 2;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let adesso = new Date();
+      console.log(adesso.getHours());
+      console.log(adesso.getMinutes());
+      const options = {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      };
+
+      console.log(adesso.toLocaleDateString("it-IT", options));
+    </script>
+  </body>
+</html>

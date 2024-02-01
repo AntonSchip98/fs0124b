@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function test() {}
+      let anonymousFunction = function () {
+        return "ciao";
+      };
+      (function () {
+        console.log("funziona");
+      })();
+      //Closure
+      function closure() {
+        let prova = 1;
+        function figlia() {
+          //qui prova è accessibile
+          console.log(prova);
+          let provaInterna = 2;
+        }
+        //qui prova interna non è accessibile
+        console.log(provaInterna);
+      }
+
+      function prima(a) {
+        return function seconda(b) {
+          return function terza(c) {
+            return a + b + c;
+          };
+        };
+      }
+      console.log(prima(1)(2)(3));
+    </script>
+  </body>
+</html>

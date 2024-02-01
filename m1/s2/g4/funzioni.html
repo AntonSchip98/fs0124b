@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Questa è una funzione che esegue un qualche risultato visivo, ma non ritorna nessun dato(non c'è return)
+      function mostraSaluto() {
+        //definizione funnzione
+        console.log("ciao");
+        console.log("ciao");
+        console.log("ciao");
+        console.log("ciao");
+      }
+      mostraSaluto(); //invocazione funzione
+
+      console.log(mostraSaluto); //senza le parentesi tonde un console.log mi mostrerà
+      //il contenuto della funzione
+      console.log(mostraSaluto()); //la funzione non ha alcun return, quindi ho come valore
+      //undefined, sto usando come dato una funzione che non restituisce dati
+
+      //Questa è una funzione che restituisce dati, e nessun risultato visivo
+      function restituisciSaluto() {
+        return "ciao";
+      }
+
+      let saluto = restituisciSaluto(); //posso salvare il dato ritornato da una funzione
+      // in una variabile
+
+      console.log(restituisciSaluto(), saluto);
+    </script>
+  </body>
+</html>
