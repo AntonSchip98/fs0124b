@@ -1,0 +1,176 @@
+/* Your styles here */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #e9edee;
+}
+.spaziatura-standard {
+  margin: 30px;
+}
+.text-center {
+  text-align: center;
+  width: 100%;
+}
+.color-white {
+  color: white;
+}
+/*---------- Header-----------*/
+
+/* sezione logo */
+
+.logo {
+  height: 50px;
+}
+.logo-container {
+  background-color: #222f3f;
+}
+.logo-container .logo {
+  padding: 10px 10px 10px 30px;
+}
+/* sezione nav */
+#nav-section {
+  background-color: #364757;
+}
+#nav-section .menu {
+  padding-left: 15px;
+}
+.menu li {
+  display: inline-block;
+  padding: 10px 0 10px 22px;
+}
+.menu li a {
+  color: white;
+  font-size: 17px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/*---------- Main-----------*/
+
+/* Blocco arancio */
+
+.sfondo-arancio {
+  background-color: #f86500;
+}
+.sfondo-arancio p {
+  color: white;
+  font-size: 17px;
+  padding: 10px;
+}
+/* Blocco verde */
+.sfondo-verde {
+  background-color: #306e63;
+  background-image: url(../images/bg-image.png);
+  background-size: 92%;
+  background-position: cover;
+}
+.sfondo-verde h1 {
+  padding: 80px 0 30px 0;
+  font-size: 40px;
+  font-weight: bolder;
+}
+.sfondo-verde p {
+  font-size: 20px;
+  font-weight: 300;
+  padding-bottom: 50px;
+}
+
+/* container immagini orizzontali*/
+
+.testi {
+  padding: 20px 0 0 25px;
+}
+.testi p,
+.testi a {
+  display: inline-block;
+  vertical-align: middle;
+}
+.testi p {
+  font-size: 25px;
+  font-weight: bold;
+}
+.testi a {
+  color: #0789a3;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 20px;
+}
+.container2 {
+  background-color: white;
+}
+.container-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-img .img {
+  width: 100%;
+  height: 500px;
+  margin: 20px 20px;
+  background-position: center;
+  border-radius: 5%;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.226);
+}
+.img1 {
+  background-image: url(../images/img_1.jpg);
+}
+
+.img2 {
+  background-image: url(../images/img_2.jpg);
+}
+.img3 {
+  background-image: url(../images/img_3.jpg);
+}
+.img4 {
+  background-image: url(../images/img_4.jpg);
+}
+
+/* container blocchi di immagini large */
+
+.img-large {
+  width: 100%;
+  height: 500px;
+  border: 1px solid rgba(128, 128, 128, 0.274);
+}
+.img5 {
+  background-image: url(../images/img_9.png);
+  background-position: center;
+}
+
+.img6 {
+  background-image: url(../images/img_10.png);
+  background-position: center;
+}
+.container-large .testi {
+  padding-top: 5px;
+  padding-bottom: 20px;
+}
+
+/*---------- FOOTER -----------*/
+.back {
+  background-color: #364757;
+}
+.back a {
+  color: white;
+}
+
+#footer .back {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+#footer .logo-container {
+  display: flex;
+  justify-content: center;
+  padding: 60px 30px 60px 0;
+}
+#footer .logo {
+  height: 70px;
+}
