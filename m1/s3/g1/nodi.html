@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="lista">
+      <!-- qui c'è un oggeto chiamato TextContent nella NodeList-->
+      <li>Elemento</li>
+      <!-- qui c'è un oggeto chiamato TextContent nella NodeList -->
+      <li>Elemento</li>
+      <!-- qui c'è un oggeto chiamato TextContent nella NodeList -->
+    </ul>
+
+    <script>
+      let list = document.getElementById("lista");
+      list.childNodes[0].textContent = "Testo aggiunto da JS";
+      console.log(lista);
+      console.log(lista.firstChild);
+      console.log(lista.firstElementChild);
+    </script>
+  </body>
+</html>

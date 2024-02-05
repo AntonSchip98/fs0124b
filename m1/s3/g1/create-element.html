@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="test"></div>
+    <script>
+      const target = document.querySelector("#test");
+
+      // crea un oggetto del DOM, e viene definito dalla stringa tra parentesi tonde
+      let ul = document.createElement("ul");
+      let li = document.createElement("li");
+      let li2 = document.createElement("li");
+      li.innerText = "Elemento lista";
+      li2.innerText = "Elemento lista 2";
+
+      li2.addEventListener("click", function () {
+        li2.style.backgroundColor = "red";
+      });
+      // aggiunge un tag (li) all interno del tag selezionato (ul)
+      ul.append(li, li2);
+
+      console.log(ul);
+
+      target.append(ul);
+    </script>
+  </body>
+</html>

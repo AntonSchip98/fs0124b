@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="menu"></div>
+
+    <script>
+      let pizze = [
+        {
+          gusto: "Margherita",
+          prezzo: 5,
+        },
+        {
+          gusto: "Diavola",
+          prezzo: 1,
+        },
+      ];
+
+      let menu = document.getElementById("menu");
+
+      pizze.forEach((p) => {
+        let div = document.createElement("div");
+        div.innerText = p.gusto + " prezzo: " + p.prezzo;
+
+        menu.append(div);
+      });
+    </script>
+  </body>
+</html>

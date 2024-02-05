@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="test">Prova</div>
+    <div class="blocco">Elemento con classe blocco</div>
+    <div class="blocco">Elemento con classe blocco</div>
+    <div class="blocco">Elemento con classe blocco</div>
+    <script>
+      // METODO:
+      // let obj = {
+      //     test: function(){
+
+      //     }
+      // }
+      // obj.test()
+
+      //posso selezionare un tag ottenendo una reference all'oggetto DOM presente in pagina
+      let test = document.getElementById("test");
+      //devo ricordare che la ricerca potrebbe resituire null se non avessi scritto bene l'id
+
+      //   per la lettura e la scrittura delle proprietà degli oggetti DOM valgono le regole
+      // degli oggetti che già conosci:
+
+      // lettura
+      console.log(test.innerText);
+      //   scrittura
+      test.style.color = "red";
+
+      const classi = document.getElementsByClassName("blocco");
+      console.log(classi);
+
+      //l' unico modo per agire su una lista di elmenti selezionati per classe o per tag è ciclare
+      for (let el of classi) {
+        el.style.backgroundColor = "green";
+      }
+
+      const tags = document.getElementsByTagName("div");
+      console.log(tags);
+
+      Array.from(tags).forEach((element) => {
+        element.innerText = "Modificato di nuovo";
+      });
+    </script>
+  </body>
+</html>
