@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .card {
+        width: 300px;
+      }
+      .card img {
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container"></div>
+    <h1><span></span></h1>
+    <script>
+      const prodotti = [
+        {
+          nome: "Maglietta",
+          colore: "Blu",
+          taglia: "M",
+          prezzo: 19.99,
+        },
+        {
+          nome: "Pantaloni",
+          colore: "Nero",
+          taglia: "L",
+          prezzo: 29.99,
+        },
+        {
+          nome: "Scarpe",
+          colore: "Rosse",
+          taglia: "42",
+          prezzo: 49.99,
+        },
+      ];
+
+      const container = document.querySelector(".container");
+      prodotti.forEach((el) => {
+        const { nome, colore, taglia, prezzo } = el;
+        // container.innerHTML += `
+        // <div class="card">
+        //     <h3> ${el.nome} </h3>
+        //     <img src="${el.colore}"/>
+        //     <p> ${el.taglia}</p>
+        //     <button> ${el.prezzo}</button>
+        //     </div>`;
+
+        container.classList.add("card");
+        const h3 = document.createElement("h3");
+        h3.innerText = nome;
+        container.appendChild(h3);
+      });
+
+      const totale = document.querySelector("h1 span");
+      totale.innerText =
+        prodotti.reduce((temp, curr) => temp + curr.prezzo, 0) + "$";
+    </script>
+  </body>
+</html>

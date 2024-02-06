@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="templateLiteral"></ul>
+    <script>
+      ///// Spread operator
+      const user = {
+        name: "Antonio",
+        email: "antonio@gmail.com",
+        classi: ["0822", "0522", "0123", "0223", "0623"],
+      };
+
+      const userDetails = {
+        ...user,
+        email: "email@email.it",
+        classe: "b1",
+        role: "pro",
+      };
+      console.log(userDetails);
+
+      const lettere = ["a", "b", "c", "d", "e"];
+      const altreLettere = ["f", "g", "h", "i"];
+      // lettere.push('f', 'g') -> cambia l'array originale
+      const completo = [...lettere, ...altreLettere];
+      console.log(altreLettere);
+      console.log(completo);
+
+      ///// Rest Parameter
+      // const sumWithText = function (text, numA, numB) {
+      //   return numA + numB + text;
+      // };
+      const sumWithText = function (text, ...num) {
+        console.log(num);
+        let sum = 0;
+        for (let el of num) {
+          sum += el;
+        }
+        return sum;
+      };
+      console.log(sumWithText("pippo", 34, 12, 67, 8, 12, 90));
+
+      ///// DESTRUCTURING OPERATOR
+
+      // const nome = user.name;
+      // const email = user.email;
+      const { name, email } = user;
+      console.log(name, email);
+
+      const numeri = [1, 2, 3, 4, 5, 6];
+      const [primo, secondo, , quarto] = numeri;
+      console.log(primo, secondo, quarto);
+
+      ////TEMPLATE LITERALS
+
+      // const creaStringa = (user) => {
+      //   return (
+      //     "L'utente " +
+      //     user.name +
+      //     " con email " +
+      //     user.email +
+      //     " ha il ruolo di: " +
+      //     user.role
+      //   );
+      // };
+
+      const creaStringa = (user) => {
+        return `l'utente ${user.name} con email ${user.email} ha il ruolo di: ${user.role}`;
+      };
+      console.log(creaStringa(userDetails));
+
+      const nomi = ["Antonio", "allessandro", "cristian", "fabio"];
+
+      const ul = document.querySelector("#templateLiteral");
+      for (let i = 0; i < nomi.length; i++) {
+        ul.innerHTML += `<li> ${nomi[i]} </li>`;
+      }
+
+      // METODI ARRAY
+      const fiori = ["margherita", "rosa", "tulipano"];
+      fiori.slice(0, 2);
+      console.log(fiori);
+
+      //foreach()
+      const stringhe = ["ciao", "mondo", "come", "stai?"];
+
+      stringhe.forEach((el) => {
+        console.log("Equivalente di stringhe[i]", el);
+      });
+
+      // map()
+      const newArr = stringhe.map((el) => (el = "ciao"));
+      console.log(newArr);
+      const html = stringhe.map((el) => `<li> ${el} </li>`);
+      console.log(html);
+
+      // filter()
+      const filterArr = stringhe.filter((el) => el.charAt(0) === "c");
+      console.log(filterArr);
+
+      //reuce()
+      const shopping = {
+        email: "pippo@pippo.it",
+        carrello: [12, 45, 99, 1, 0.5],
+      };
+      console.log(shopping.carrello.reduce((sum, cur) => sum + cur, 0));
+
+      //indefOf()
+      const nomi2 = ["paolo", "luca", "franco", "patty"];
+      console.log(nomi2.indexOf("pippo"));
+    </script>
+  </body>
+</html>
