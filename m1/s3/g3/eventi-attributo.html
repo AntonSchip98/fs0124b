@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="bottone">Click</button>
+    <div id="saluto"></div>
+    <script>
+      let bottone = document.getElementById("bottone");
+      bottone.addEventListener("click", mostraSaluto);
+      function mostraSaluto() {
+        let areaSaluto = document.getElementById("saluto");
+        areaSaluto.innerHTML = "ciao";
+      }
+    </script>
+  </body>
+</html>

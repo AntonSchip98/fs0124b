@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <input id="nome" type="text" placeholder="nome" />
+      <input id="email" type="email" placeholder="Email" />
+      <input id="password" type="password" placeholder="Password" />
+
+      <button id="invia">Invia</button>
+    </form>
+    <script>
+      const invia = document.getElementById("invia");
+      // al click sul tasto invia scatena questa funzione
+      // grazie ad event possiamo interagire con l evento stesso, useremo quindi preventDefault()
+
+      invia.addEventListener("click", function (e) {
+        // questo impedisce il comportamento di default dell evento, in questo caso il ricaricamento
+        // della pagina
+        e.preventDefault(); //blocca l'invio del form e la ricarica della pagina
+
+        // validazione
+
+        // seleziono tutti i campi da controllare
+        let nome = document.querySelector("#nome");
+        let email = document.querySelector("#email");
+        let password = document.querySelector("#password");
+
+        let valid = true;
+
+        // controllo i valori
+        if (!nome.value) {
+          console.log("campo nome vuoto");
+          nome.style.border = "3px solid red";
+          valid = false;
+        }
+
+        if (!email.value) {
+          console.log("campo email vuoto");
+          valid = false;
+        }
+
+        if (password.value == "") {
+          console.log("campo password vuoto");
+          valid = false;
+        }
+
+        if (valid) {
+          console.log("form inviato");
+        }
+      });
+    </script>
+  </body>
+</html>

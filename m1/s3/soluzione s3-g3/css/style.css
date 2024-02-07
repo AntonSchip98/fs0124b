@@ -1,0 +1,80 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* style for html native element */
+
+.todo-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.inputTask {
+  width: 86%;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-right: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btnAdd {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btnAdd:hover {
+  background-color: #0056b3;
+}
+
+.taskList {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* style for js generated element */
+
+.divEl {
+  text-align: center;
+  background-color: #f9f9f9;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+
+.taskElement {
+  display: inline-block;
+  padding: 10px 40px 10px 10px;
+  font-size: 20px;
+  font-weight: 1000;
+  margin-bottom: 5px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+}
+
+.btnRemove {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: red;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.taskList {
+  list-style-type: disc;
+}
+
+.lineThrough {
+  text-decoration: line-through;
+  color: grey;
+}
