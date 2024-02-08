@@ -11,8 +11,8 @@ btnAdd.addEventListener("click", function () {
     const div = document.createElement("div");
     const li = document.createElement("li");
     const btnRemove = document.createElement("button");
-    btnRemove.textContent = "X";
-    li.textContent = task;
+    btnRemove.innerText = "X";
+    li.innerText = task;
     div.classList.add("divEl");
     li.classList.add("taskElement");
     btnRemove.classList.add("btnRemove");
@@ -32,5 +32,3 @@ btnAdd.addEventListener("click", function () {
     });
   }
 });
-
-// sbarrare la task
