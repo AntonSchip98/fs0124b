@@ -43,26 +43,34 @@ createTabellina();
 
 // evento al bottone per estrarre il numero casuale
 estraiBtn.addEventListener("click", function () {
-  //generiamo un index casuale per ricavare dall'array un
-  // numero casuale da 0 a alla lunghezza dell array(che ad ogni
-  // estrazione dimnuirà di uno)
-  const randomIndex = Math.floor(Math.random() * arrCaselle.length);
-  const randomNumber = arrCaselle[randomIndex];
+  if (arrCaselle.length != 0) {
+    //generiamo un index casuale per ricavare dall'array un
+    // numero casuale da 0 a alla lunghezza dell array(che ad ogni
+    // estrazione dimnuirà di uno)
+    const randomIndex = Math.floor(Math.random() * arrCaselle.length);
+    const randomNumber = arrCaselle[randomIndex];
 
-  //con un template litreal selezionerò il div con la classe che ha in se il
-  //numero randomico
-  const extractedDiv = document.querySelector(`.number-${randomNumber}`);
-  extractedDiv.style.backgroundColor = "yellow";
+    //con un template litreal selezionerò il div con la classe che ha in se il
+    //numero randomico
+    const extractedDiv = document.querySelector(`.number-${randomNumber}`);
+    extractedDiv.style.backgroundColor = "yellow";
 
-  if (arrTabellina.includes(randomNumber)) {
-    const extractedDivTabellina = document.querySelector(
-      `.miniNumber-${randomNumber}`
-    );
-    extractedDivTabellina.style.backgroundColor = "yellow";
+    if (arrTabellina.includes(randomNumber)) {
+      const extractedDivTabellina = document.querySelector(
+        `.miniNumber-${randomNumber}`
+      );
+      extractedDivTabellina.style.backgroundColor = "yellow";
+    }
+
+    //eliminiamo il numero estratto dall array
+    arrCaselle.splice(randomIndex, 1);
+    //   console.log(randomNumber);
+    //   console.log(arrCaselle.length);
+  } else {
+    const p = document.createElement("p");
+    p.innerText = "La tombola è finita";
+    p.append("main");
+    p.classList.add("title");
+    tabellone.remove();
   }
-
-  //eliminiamo il numero estratto dall array
-  arrCaselle.splice(randomIndex, 1);
-  //   console.log(randomNumber);
-  //   console.log(arrCaselle.length);
 });
