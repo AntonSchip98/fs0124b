@@ -1,0 +1,41 @@
+.col {
+  height: 400px;
+  background-color: bisque;
+  border: 1px solid black;
+  vertical-align: top;
+}
+
+/* da 480px in su, tutti i dispositivi avranno le seguenti differenze dagli schermi piu piccoli */
+@media screen and (min-width: 560px) {
+  .col {
+    /* aggiungiamo  -4px per l inline block, non lo useremo andadno avanti */
+    width: calc(100% / 2 - 4px);
+    display: inline-block;
+    background-color: aqua;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .col {
+    /* aggiungiamo  -4px per l inline block, non lo useremo andadno avanti */
+    width: calc(100% / 3 - 6px);
+    background-color: blue;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1200px;
+    margin: 0 auto;
+  }
+  .col {
+    /* aggiungiamo  -4px per l inline block, non lo useremo andadno avanti */
+    width: calc(100% / 4 - 6px);
+    background-color: red;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 1440px;
+  }
+}
