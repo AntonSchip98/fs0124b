@@ -1,0 +1,20 @@
+.float-img {
+  /* porta l'immagine totalmente a sinistra */
+  float: left;
+  padding-right: 15px;
+}
+.container {
+  width: 1170px;
+  margin: 0 auto;
+  background-color: red;
+}
+.float-col {
+  height: 100px;
+  width: 33%;
+  background-color: bisque;
+  float: left;
+  border: 1px solid black;
+}
+.clearfix {
+  clear: both;
+}

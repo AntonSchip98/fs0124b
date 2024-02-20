@@ -78,20 +78,26 @@ header nav li a::before {
 /*  1200px in su */
 @media screen and (min-width: 1200px) {
   header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 25px 0 30px;
+    text-align: left;
+    padding: 10px 20px 0 20px;
   }
-
-  header div {
-    display: flex;
-    align-items: center;
+  header .brand,
+  header nav,
+  header .brand p {
+    display: inline-block;
   }
-  header div img {
-    padding: 5px 20px 5px 20px;
+  header .brand {
+    width: 75%;
+  }
+  header .brand img {
+    vertical-align: middle;
+    margin-right: 60px;
+  }
+  header .brand p {
+    margin-bottom: 0;
   }
 }
+
 /* MAIN */
 main {
   background-color: #fff;
