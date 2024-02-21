@@ -1,0 +1,71 @@
+body {
+  color: #732104;
+  font-family: "Roboto", sans-serif;
+}
+
+.container-card {
+  display: flex;
+  margin: 5px 10px 30px 10px;
+  background-color: #fbf7e3;
+  border-radius: 60px;
+  overflow: hidden;
+  flex-direction: column;
+}
+.container-card img {
+  width: 100%;
+  aspect-ratio: inherit;
+  object-fit: cover;
+}
+.container-card button {
+  width: 50%;
+  color: #732104;
+  font-size: 15px;
+  font-weight: 600;
+  align-self: center;
+  border: none;
+  padding: 10px;
+  background-color: #ffdf7f;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+.product-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25%;
+  padding: 20px;
+}
+
+.product-info h3 {
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+.column {
+  text-align: center;
+}
+.product-info > p {
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+.column p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+/* TITOLI DI PAGINA PER INDEX */
+.titles {
+  color: #732104;
+  text-align: center;
+  margin: 45px 70px;
+  font-weight: 1000;
+  font-size: 35px;
+}
+.title2 {
+  color: #732104;
+  text-align: center;
+  margin: 45px 0 20px 0;
+  font-weight: 1000;
+  font-size: 30px;
+}

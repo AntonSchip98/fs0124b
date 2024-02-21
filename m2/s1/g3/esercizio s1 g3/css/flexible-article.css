@@ -1,0 +1,22 @@
+body {
+  color: #732104;
+  font-family: "Roboto", sans-serif;
+}
+.container-article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fbf7e3;
+  padding: 30px;
+  margin: 10px;
+  border-radius: 35px;
+}
+.container-article h3 {
+  font-weight: 550;
+  font-size: 22px;
+  margin-bottom: 25px;
+}
+.container-article p {
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
