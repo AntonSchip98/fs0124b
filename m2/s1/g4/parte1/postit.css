@@ -53,12 +53,12 @@ body {
 }
 
 .task:hover {
-  transform: scale(1.1); /* Ingrandisce il div principale */
+  transform: scale(1.1);
 }
 
 .task:hover h3,
 .task:hover p {
-  transform: scale(1.1); /* Ingrandisce gli elementi interni */
+  transform: scale(1.1);
 }
 
 @keyframes post-it {
