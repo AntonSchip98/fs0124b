@@ -1,6 +1,7 @@
 window.addEventListener("scroll", function () {
   const navbar = document.querySelector("#nav-bar");
   const right = document.querySelector(".right-side");
+  const left = document.querySelector(".left-side");
   const navBtn = document.querySelector(".list button");
   let target = this.window.scrollY;
 
@@ -13,8 +14,10 @@ window.addEventListener("scroll", function () {
   }
 
   if (target >= 800 && window.innerWidth > 1100) {
+    left.classList.add("left-fixed");
     right.classList.add("fixed");
   } else {
+    left.classList.remove("left-fixed");
     right.classList.remove("fixed");
   }
 });
