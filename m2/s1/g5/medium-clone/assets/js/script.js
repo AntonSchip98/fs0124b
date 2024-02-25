@@ -12,7 +12,7 @@ window.addEventListener("scroll", function () {
     navBtn.style.backgroundColor = "black";
   }
 
-  if (target >= 730 && window.innerWidth > 1100) {
+  if (target >= 800 && window.innerWidth > 1100) {
     right.classList.add("fixed");
   } else {
     right.classList.remove("fixed");
