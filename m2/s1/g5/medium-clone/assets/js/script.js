@@ -39,7 +39,7 @@ const functionM = () => {
 
       // facciamo scomparire le m con l opacita 0
       gElement.style.opacity = 0;
-    }, 30);
+    }, 20);
 
     // dopo 5 secondi, avvia la funzione fadeIn per far ricomparire le m
     setTimeout(() => {
