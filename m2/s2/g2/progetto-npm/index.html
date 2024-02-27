@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <!-- Abbiamo bisogno di un sito web per un'agenzia di viaggi!
+
+In questa pagina aggiungerai destinazioni di posti che sogni di visitare in futuro.
+
+Il progetto non richiede alcuna customizzazione di CSS, dovrai crearlo interamente usando le classi di bootstrap, sia per quello che riguarda il layout che lo stile.
+
+
+Testa frequentemente il tuo lavoro nelle 3 principali risoluzioni (mobile, tablet, desktop) usando i developer tools del browser nella sezione emulazione device, per una maggiore precisione.
+
+Inizia utilizzando i componenti esistenti di Bootstrap 5 per creare la tua pagina (modificali all'occorrenza utilizzando le utility classes di bootstrap: colori, spazi, margini, dimensioni etc...)
+Usa container > row > col-* in questo ordine per ottenere un layout responsive perfetto.
+
+Esercizi:
+
+1) Implementa una navbar con questi elementi di menu:
+Home
+Saldi
+Welcome Summer
+Last Minute
+Recensioni
+
+Collegherai ogni sezione della pagina agli elementi del menu corrispondenti. 
+
+2) Aggiungi un logo alla navbar, un qualsiasi logo di agenzia di viaggi, anche inventata.
+
+3) Aggiungi una sezione introduttiva con il nome, il payoff dell'agenzia, 
+una breve descrizione in corsivo e una call-to-action (bottone) "Prenota ora" di colore azzurro chiaro e testo bianco e grassetto
+
+Il background della sezione sarà grigio chiaro e con bordi arrotondati e del padding generoso all'interno
+
+4) Implementa la sezione "Saldi". Qui mostrerai 4 destinazioni.
+
+In questa sezione dovranno esserci:
+
+4 card per destinazioni per linea a schermo grande - desktop (quattro sulla stessa linea)
+3 card per destinazioni per linea a schermo medio  - tablet  (una dovrà scomparire)
+2 card per destinazioni per linea a schermo piccolo - mobile (due per linea)
+
+le card avranno un bordo di 2px azzurro chiaro, il bottone azzurro chiaro e testo default
+
+5) Implementa la sezione "Welcome Summer". Qui mostrerai 6 destinazioni al tuo utente. (nessun bordo, ma stesso stile dei bottoni precedenti)
+
+In questa sezione dovranno esserci:
+
+6 card per destinazioni per linea a schermo extra large
+3 card per destinazioni per linea a schermo grande (desktop)
+2 card per destinazioni per linea a schermo medio (tablet)
+2 card per destinazioni per linea a schermo piccolo (mobile)
+
+6) Implementa la sezione "Offerta del giorno". Qui avrai:
+
+66% dello spazio dedicato all'immagine del luogo di destinazione
+33% dedicato al nome, date, prezzo e un badge con "best offer" come testo
+
+l'immagine avrà i bordi arrotondati e un'ombra leggera
+per il contenuto: il nome dovrà essere più grande del resto,
+le date dovranno essere formattate con font "monospace",
+il prezzo dovrà essere definito come "lead"
+e il badge sarà scuro
+
+
+7) Rendi invisibile la sezione "Offerta del giorno" su schermi piccoli.
+
+8) Aggiungi nella sezione "Welcome Summer" un'ombra grande ad ogni card.
+
+9) Crea una sezione "Last Minute", in cui mostrerai 6 immagini delle destinazioni last minute come rettangoli ombreggiati dai bordi arrotondati, senza testo. Rendile responsive come preferisci!
+
+10) Crea una sezione "Recensioni", dove l'utente potrà trovare alcuni feedback da utenti fittizi. 
+Piccola immagine tonda a sinistra con bordo 2px azzurro, nome utente e recensione a destra
+
+11) Crea un footer con le informazioni dell'agenzia e un bottone "Contattaci".
+
+
+
+EXTRAS
+
+12) Crea un bottone vicino ad ogni sezione per collassarla e riaprirla se premuto.
+
+13) Crea la possibilità di contare il numero di "viaggi" presenti sulla pagina e visualizzare il risultato in un alert.
+
+14) Crea un modale con un campo email e un messaggio.
+
+15) Quando l'utente cliccherà su "Contattaci", il modale dovrà essere visualizzato.
+
+16) Crea una funzione che aggiunga un badge con la scritta "HOT" su ognuna delle offerte "Welcome Summer" posizionato in alto a destra.
+
+17) Crea una funzione che rimuova tutte le "card" dalla pagina
+
+-->
+
+  <body>
+    <header class="mb-5">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Saldi</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Welcome Summer</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Disabled</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Last minute</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Recensioni</a>
+              </li>
+            </ul>
+            <form class="d-flex justify-content-end" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-danger" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="container mb-5">
+        <div class="card bg-body-tertiary">
+          <div class="card-body">
+            <blockquote
+              class="blockquote pb-4 mb-0 border-bottom border-tertiary"
+            >
+              <p class="fs-1 d-inline text-center fw-ligh">Eveline R</p>
+              <footer class="blockquote-footer d-inline text-center">
+                Feel the Freedom
+              </footer>
+            </blockquote>
+            <p class="card-text mt-2 mb-4 fs-5 text-secondary fst-italic">
+              Scopri le destinazioni più calde del momento!
+            </p>
+            <a href="#" class="btn btn-info text-white px-4 fw-medium"
+              >Prenota ora</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- SALE SECTION -->
+      <section class="container mb-5">
+        <div class="d-flex justify-content-between">
+          <h3>Saldi</h3>
+          <button type="button" class="btn btn-unstyled text-info">
+            Nascondi sezione
+          </button>
+        </div>
+
+        <div class="card-group">
+          <div class="row">
+            <div class="col-6 col-md-4 col-lg-3">
+              <div class="card border border-info">
+                <img
+                  src="https://www.shutterstock.com/shutterstock/photos/2178017823/display_1500/stock-photo-underwater-sea-deep-abyss-with-blue-sun-light-2178017823.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Titolo</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <button type="button" class="btn btn-info">Prenota</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+              <div class="card border border-info">
+                <img
+                  src="https://www.shutterstock.com/shutterstock/photos/2178017823/display_1500/stock-photo-underwater-sea-deep-abyss-with-blue-sun-light-2178017823.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Titolo</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <button type="button" class="btn btn-info">Prenota</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+              <div class="card border border-info">
+                <img
+                  src="https://www.shutterstock.com/shutterstock/photos/2178017823/display_1500/stock-photo-underwater-sea-deep-abyss-with-blue-sun-light-2178017823.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Titolo</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <button type="button" class="btn btn-info">Prenota</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 d-md-none d-lg-block col-lg-3">
+              <div class="card border border-info">
+                <img
+                  src="https://www.shutterstock.com/shutterstock/photos/2178017823/display_1500/stock-photo-underwater-sea-deep-abyss-with-blue-sun-light-2178017823.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Titolo</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <button type="button" class="btn btn-info">Prenota</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WELCOME SUMMER SECTION -->
+      <section class="container mb-5">
+        <div class="d-flex justify-content-between">
+          <h3>Welcome Summer</h3>
+          <button type="button" class="btn btn-unstyled text-info">
+            Nascondi sezione
+          </button>
+        </div>
+        <div class="card-group">
+          <div class="row">
+            <div class="col-6 col-lg-4">
+              <div class="card border border-info">
+                <img src="..." class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">Titolo</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <button type="button" class="btn btn-info">Prenota</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-lg-4">
+              <div class="card border border-info">
+                <img src="..." class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">Titolo</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <button type="button" class="btn btn-info">Prenota</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-4">
+              <div class="card border border-info">
+                <img src="..." class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">Titolo</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <button type="button" class="btn btn-info">Prenota</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-lg-4">
+              <div class="card border border-info">
+                <img src="..." class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">Titolo</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <button type="button" class="btn btn-info">Prenota</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-lg-4">
+              <div class="card border border-info">
+                <img src="..." class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">Titolo</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <button type="button" class="btn btn-info">Prenota</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-lg-4">
+              <div class="card border border-info">
+                <img src="..." class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">Titolo</h5>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <button type="button" class="btn btn-info">Prenota</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- OFFERTA DEL GIORNO -->
+      <section class="container mb-5">
+        <h3>Offerta del giorno</h3>
+
+        <div class="card mb-3 border-0">
+          <div class="row">
+            <div class="col-6 col-md-7">
+              <img
+                src="https://www.shutterstock.com/shutterstock/photos/2178017823/display_1500/stock-photo-underwater-sea-deep-abyss-with-blue-sun-light-2178017823.jpg"
+                class="img-fluid rounded-start"
+                alt="..."
+              />
+            </div>
+            <div class="col-6 col-md-5">
+              <div class="card-body">
+                <h5 class="fs-1 card-title">Fushifaru Maldives</h5>
+
+                <p class="card-text">
+                  <small class="text-body-secondary"
+                    >15.01.2021-31.01.2021</small
+                  >
+                </p>
+                <p class="card-text">
+                  Ville a partire da 500 €, non fartele sfuggire!
+                </p>
+                <button type="button" class="btn btn-dark btn-sm">
+                  Best offer
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LAST MINUTE -->
+      <section class="container mb-5">
+        <h3>Last minute</h3>
+
+        <div class="card-group">
+          <div class="row">
+            <div class="col-6 col-md-4 col-lg-2">
+              <div class="card">
+                <img
+                  src="https://www.shutterstock.com/shutterstock/photos/2178017823/display_1500/stock-photo-underwater-sea-deep-abyss-with-blue-sun-light-2178017823.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+              </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+              <div class="card">
+                <img
+                  src="https://www.shutterstock.com/shutterstock/photos/2178017823/display_1500/stock-photo-underwater-sea-deep-abyss-with-blue-sun-light-2178017823.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+              </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+              <div class="card">
+                <img
+                  src="https://www.shutterstock.com/shutterstock/photos/2178017823/display_1500/stock-photo-underwater-sea-deep-abyss-with-blue-sun-light-2178017823.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+              </div>
+            </div>
+            <div class="col col-md-4 col-lg-2">
+              <div class="card">
+                <img
+                  src="https://www.shutterstock.com/shutterstock/photos/2178017823/display_1500/stock-photo-underwater-sea-deep-abyss-with-blue-sun-light-2178017823.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+              </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+              <div class="card">
+                <img
+                  src="https://www.shutterstock.com/shutterstock/photos/2178017823/display_1500/stock-photo-underwater-sea-deep-abyss-with-blue-sun-light-2178017823.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+              </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+              <div class="card">
+                <img
+                  src="https://www.shutterstock.com/shutterstock/photos/2178017823/display_1500/stock-photo-underwater-sea-deep-abyss-with-blue-sun-light-2178017823.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <aside class="container mb-5">
+      <h3 class="text-center">Dicono di noi</h3>
+      <div class="row">
+        <div class="col-12 mb-2">
+          <div class="flex-row">
+            <img
+              class="img rounded-circle border border-info"
+              src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/271deea8-e28c-41a3-aaf5-2913f5f48be6/de7834s-6515bd40-8b2c-4dc6-a843-5ac1a95a8b55.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzI3MWRlZWE4LWUyOGMtNDFhMy1hYWY1LTI5MTNmNWY0OGJlNlwvZGU3ODM0cy02NTE1YmQ0MC04YjJjLTRkYzYtYTg0My01YWMxYTk1YThiNTUuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.BopkDn1ptIwbmcKHdAOlYHyAOOACXW0Zfgbs0-6BY-E"
+              alt=""
+            />
+            <div class="flex-col">
+              <h4>Username</h4>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Tempora maiores obcaecati consectetur numquam reprehenderit.
+                Itaque quibusdam labore magni eveniet corporis eaque tenetur
+                rem? Nisi distinctio dolorum quae cum recusandae facere.
+                Corporis labore dolores, quia quas vero asperiores iure! Illo
+                autem expedita vitae maiores sint! Deserunt consequatur
+                praesentium esse quas, unde vel nesciunt molestias amet
+                consequuntur, illo quam aperiam aut. Eum. Mollitia, rem iste sit
+                ratione nemo corrupti magni asperiores
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 mb-2">
+          <div class="flex-row">
+            <img
+              class="img rounded-circle border border-info"
+              src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/271deea8-e28c-41a3-aaf5-2913f5f48be6/de7834s-6515bd40-8b2c-4dc6-a843-5ac1a95a8b55.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzI3MWRlZWE4LWUyOGMtNDFhMy1hYWY1LTI5MTNmNWY0OGJlNlwvZGU3ODM0cy02NTE1YmQ0MC04YjJjLTRkYzYtYTg0My01YWMxYTk1YThiNTUuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.BopkDn1ptIwbmcKHdAOlYHyAOOACXW0Zfgbs0-6BY-E"
+              alt=""
+            />
+            <div class="flex-col">
+              <h4>Username</h4>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Tempora maiores obcaecati consectetur numquam reprehenderit.
+                Itaque quibusdam labore magni eveniet corporis eaque tenetur
+                rem? Nisi distinctio dolorum quae cum recusandae facere.
+                Corporis labore dolores, quia quas vero asperiores iure! Illo
+                autem expedita vitae maiores sint! Deserunt consequatur
+                praesentium esse quas, unde vel nesciunt molestias amet
+                consequuntur, illo quam aperiam aut. Eum. Mollitia, rem iste sit
+                ratione nemo corrupti magni asperiores
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 mb-2">
+          <div class="flex-row">
+            <img
+              class="img rounded-circle border border-info"
+              src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/271deea8-e28c-41a3-aaf5-2913f5f48be6/de7834s-6515bd40-8b2c-4dc6-a843-5ac1a95a8b55.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzI3MWRlZWE4LWUyOGMtNDFhMy1hYWY1LTI5MTNmNWY0OGJlNlwvZGU3ODM0cy02NTE1YmQ0MC04YjJjLTRkYzYtYTg0My01YWMxYTk1YThiNTUuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.BopkDn1ptIwbmcKHdAOlYHyAOOACXW0Zfgbs0-6BY-E"
+              alt=""
+            />
+            <div class="flex-col">
+              <h4>Username</h4>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Tempora maiores obcaecati consectetur numquam reprehenderit.
+                Itaque quibusdam labore magni eveniet corporis eaque tenetur
+                rem? Nisi distinctio dolorum quae cum recusandae facere.
+                Corporis labore dolores, quia quas vero asperiores iure! Illo
+                autem expedita vitae maiores sint! Deserunt consequatur
+                praesentium esse quas, unde vel nesciunt molestias amet
+                consequuntur, illo quam aperiam aut. Eum. Mollitia, rem iste sit
+                ratione nemo corrupti magni asperiores
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <footer
+      class="container-fluid bg-black d-flex justify-content-center align-items-center"
+      style="height: 200px"
+    >
+      <div class="row">
+        <div class="col-12">
+          <button class="text-center btn btn-primary">Contattacci</button>
+        </div>
+        <div class="col-12"><p class="text-center text-white">contatti</p></div>
+      </div>
+    </footer>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  </body>
+</html>

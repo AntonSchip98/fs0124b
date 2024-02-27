@@ -1,0 +1,25 @@
+.card {
+  margin-bottom: 10px;
+}
+.btn.btn-dark {
+  border-radius: 20px;
+}
+/* .img-fluid {
+  height: 80%;
+  width: 100%;
+} */
+
+.img {
+  width: 70px;
+  height: 70px;
+  /* border: 1px solid aqua; */
+  margin-right: 10px;
+}
+.flex-row {
+  display: flex;
+  align-items: flex-start;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
