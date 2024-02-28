@@ -1,0 +1,15 @@
+@import "reset";
+@import "font";
+@import "spacings";
+@import "buttons";
+@import "mixins";
+@import "animazioni";
+@import "colori";
+
+body {
+  font-family: $primary-font;
+}
+
+.floating {
+  @include floating;
+}

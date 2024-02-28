@@ -1,0 +1,254 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.padding-block-sm {
+  padding-block: 5px;
+}
+
+.margin-block-sm {
+  margin-block: 5px;
+}
+
+.padding-block-normal {
+  padding-block: 10px;
+}
+
+.margin-block-normal {
+  margin-block: 10px;
+}
+
+.padding-block-md {
+  padding-block: 15px;
+}
+
+.margin-block-md {
+  margin-block: 15px;
+}
+
+.padding-block-lg {
+  padding-block: 20px;
+}
+
+.margin-block-lg {
+  margin-block: 20px;
+}
+
+.padding-block-xl {
+  padding-block: 30px;
+}
+
+.margin-block-xl {
+  margin-block: 30px;
+}
+
+.padding-block-xxl {
+  padding-block: 40px;
+}
+
+.margin-block-xxl {
+  margin-block: 40px;
+}
+
+.padding-inline-sm {
+  padding-inline: 5px;
+}
+
+.margin-inline-sm {
+  margin-inline: 5px;
+}
+
+.padding-inline-normal {
+  padding-inline: 10px;
+}
+
+.margin-inline-normal {
+  margin-inline: 10px;
+}
+
+.padding-inline-md {
+  padding-inline: 15px;
+}
+
+.margin-inline-md {
+  margin-inline: 15px;
+}
+
+.padding-inline-lg {
+  padding-inline: 20px;
+}
+
+.margin-inline-lg {
+  margin-inline: 20px;
+}
+
+.padding-inline-xl {
+  padding-inline: 30px;
+}
+
+.margin-inline-xl {
+  margin-inline: 30px;
+}
+
+.padding-inline-xxl {
+  padding-inline: 40px;
+}
+
+.margin-inline-xxl {
+  margin-inline: 40px;
+}
+
+.btn-primary {
+  background-color: #0e6cff;
+}
+
+.btn-secondary {
+  background-color: #ff8700;
+}
+
+.btn-tertiary {
+  background-color: #4caf50;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.floating {
+  border: 10px;
+  border-radius: 0 2px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: none;
+}
+
+/*# sourceMappingURL=style.css.map */

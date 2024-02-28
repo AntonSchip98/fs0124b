@@ -1,0 +1,25 @@
+$spacings-directions: (
+  block: block,
+  inline: inline,
+);
+
+$spacings-sizes: (
+  sm: 5px,
+  normal: 10px,
+  md: 15px,
+  lg: 20px,
+  xl: 30px,
+  xxl: 40px,
+);
+
+@each $direction in map-keys($spacings-directions) {
+  @each $size, $value in $spacings-sizes {
+    .padding-#{$direction}-#{$size} {
+      padding-#{$direction}: $value;
+    }
+
+    .margin-#{$direction}-#{$size} {
+      margin-#{$direction}: $value;
+    }
+  }
+}

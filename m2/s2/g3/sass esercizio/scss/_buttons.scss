@@ -1,0 +1,9 @@
+@import "colori";
+
+@each $color-name in map-keys($btn-colors) {
+  $color: map-get($btn-colors, $color-name);
+
+  .btn-#{$color-name} {
+    background-color: $color;
+  }
+}
