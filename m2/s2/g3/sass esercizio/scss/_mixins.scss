@@ -1,19 +1,14 @@
 @mixin floating(
   $radius: 10px,
-  $shadow: 0 2px 5px rgba(0, 0, 0, 0.3),
+  $shadow: 0 4px 8px rgba(0, 0, 0, 0.3),
   $border: none
 ) {
-  border: $radius;
-  border-radius: $shadow;
-  box-shadow: $border;
+  border-radius: $radius;
+  box-shadow: $shadow;
+  border: $border;
 }
 
-@mixin grid($columnNum) {
+@mixin grid($direction) {
   display: flex;
-  flex-wrap: wrap;
-
-  > * {
-    flex: 0 0 calc(100% / #{$columNum});
-    box-sizing: border-box;
-  }
+  flex-direction: $direction;
 }

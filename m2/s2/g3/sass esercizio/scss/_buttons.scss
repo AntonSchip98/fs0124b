@@ -1,9 +1,11 @@
-@import "colori";
+@import "colors";
 
-@each $color-name in map-keys($btn-colors) {
-  $color: map-get($btn-colors, $color-name);
-
-  .btn-#{$color-name} {
+@each $name, $color in $colorsBtn {
+  .btn-#{$name} {
     background-color: $color;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    color: $light-color;
   }
 }

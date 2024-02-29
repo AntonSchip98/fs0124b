@@ -1,15 +1,94 @@
 @import "reset";
 @import "font";
-@import "spacings";
+@import "spaces";
 @import "buttons";
 @import "mixins";
-@import "animazioni";
-@import "colori";
+@import "animation";
 
 body {
-  font-family: $primary-font;
+  font-family: $font-default;
 }
 
-.floating {
-  @include floating;
+nav {
+  @include grid(row);
+  justify-content: space-between;
+  align-items: center;
+  background-color: $hero-color;
+  p {
+    color: $light-color;
+    @include font-style(20px, 400);
+  }
+  ul {
+    @include grid(row);
+    gap: 30px;
+    a {
+      color: $light-color;
+      text-decoration: none;
+    }
+  }
+}
+
+main {
+  @include grid(row);
+  background-color: $hero-color;
+  justify-content: space-between;
+  align-items: center;
+
+  div.col:nth-of-type(1) {
+    @include grid(column);
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    flex-basis: 50%;
+
+    h1 {
+      @include font-style(60px, 550);
+      @include animate-from-top(1s, 10px, 0, 300ms);
+      max-width: 50%;
+    }
+    p {
+      max-width: 80%;
+      color: $light-color;
+      @include font-style(20px, 400);
+    }
+
+    div {
+      @include grid(row);
+      gap: 15px;
+
+      button:first-of-type {
+        @include animate-from-top(1s, 10px, 0, 800ms);
+      }
+      button:nth-of-type(2) {
+        @include animate-from-top(1s, 10px, 0, 900ms);
+      }
+      button:last-of-type {
+        @include animate-from-top(1s, 10px, 0, 1000ms);
+      }
+    }
+  }
+
+  img {
+    position: relative;
+    top: 30px;
+    right: 100px;
+    @include floating;
+    @include animate-from-top(1s, -100%, 20%, 800ms);
+    height: 600px;
+    width: 600px;
+  }
+}
+
+section {
+  margin-top: 150px;
+  div {
+    @include grid(row);
+    justify-content: center;
+    flex: 1 1 calc((100% / 4) - 20px);
+
+    img {
+      width: 70%;
+      @include floating;
+    }
+  }
 }

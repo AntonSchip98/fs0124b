@@ -158,27 +158,27 @@ table {
 }
 
 .padding-block-lg {
-  padding-block: 20px;
+  padding-block: 25px;
 }
 
 .margin-block-lg {
-  margin-block: 20px;
+  margin-block: 25px;
 }
 
 .padding-block-xl {
-  padding-block: 30px;
-}
-
-.margin-block-xl {
-  margin-block: 30px;
-}
-
-.padding-block-xxl {
   padding-block: 40px;
 }
 
-.margin-block-xxl {
+.margin-block-xl {
   margin-block: 40px;
+}
+
+.padding-block-xxl {
+  padding-block: 50px;
+}
+
+.margin-block-xxl {
+  margin-block: 50px;
 }
 
 .padding-inline-sm {
@@ -206,49 +206,211 @@ table {
 }
 
 .padding-inline-lg {
-  padding-inline: 20px;
+  padding-inline: 25px;
 }
 
 .margin-inline-lg {
-  margin-inline: 20px;
+  margin-inline: 25px;
 }
 
 .padding-inline-xl {
-  padding-inline: 30px;
-}
-
-.margin-inline-xl {
-  margin-inline: 30px;
-}
-
-.padding-inline-xxl {
   padding-inline: 40px;
 }
 
-.margin-inline-xxl {
+.margin-inline-xl {
   margin-inline: 40px;
+}
+
+.padding-inline-xxl {
+  padding-inline: 50px;
+}
+
+.margin-inline-xxl {
+  margin-inline: 50px;
 }
 
 .btn-primary {
   background-color: #0e6cff;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  color: #f4f4f4;
 }
 
 .btn-secondary {
   background-color: #ff8700;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  color: #f4f4f4;
 }
 
 .btn-tertiary {
   background-color: #4caf50;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  color: #f4f4f4;
 }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.floating {
-  border: 10px;
-  border-radius: 0 2px 5px rgba(0, 0, 0, 0.3);
-  box-shadow: none;
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #640fc5;
+}
+nav p {
+  color: #f4f4f4;
+  font-size: 20px;
+  font-weight: 400;
+}
+nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+nav ul a {
+  color: #f4f4f4;
+  text-decoration: none;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  background-color: #640fc5;
+  justify-content: space-between;
+  align-items: center;
+}
+main div.col:nth-of-type(1) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  flex-basis: 50%;
+}
+main div.col:nth-of-type(1) h1 {
+  font-size: 60px;
+  font-weight: 550;
+  animation-name: animate-from-top-u0m7vtj;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-delay: 300ms;
+  max-width: 50%;
+}
+@keyframes animate-from-top-u0m7vtj {
+  from {
+    opacity: 0;
+    translate: 0 -10px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+main div.col:nth-of-type(1) p {
+  max-width: 80%;
+  color: #f4f4f4;
+  font-size: 20px;
+  font-weight: 400;
+}
+main div.col:nth-of-type(1) div {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+main div.col:nth-of-type(1) div button:first-of-type {
+  animation-name: animate-from-top-u0m7vug;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-delay: 800ms;
+}
+@keyframes animate-from-top-u0m7vug {
+  from {
+    opacity: 0;
+    translate: 0 -10px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+main div.col:nth-of-type(1) div button:nth-of-type(2) {
+  animation-name: animate-from-top-u0m7vv2;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-delay: 900ms;
+}
+@keyframes animate-from-top-u0m7vv2 {
+  from {
+    opacity: 0;
+    translate: 0 -10px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+main div.col:nth-of-type(1) div button:last-of-type {
+  animation-name: animate-from-top-u0m7vvn;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-delay: 1000ms;
+}
+@keyframes animate-from-top-u0m7vvn {
+  from {
+    opacity: 0;
+    translate: 0 -10px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+main img {
+  position: relative;
+  top: 30px;
+  right: 100px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border: none;
+  animation-name: animate-from-top-u0m7vw3;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-delay: 800ms;
+  height: 600px;
+  width: 600px;
+}
+@keyframes animate-from-top-u0m7vw3 {
+  from {
+    opacity: 0;
+    translate: 0 100%;
+  }
+  to {
+    opacity: 1;
+    translate: 0 20%;
+  }
+}
+
+section {
+  margin-top: 150px;
+}
+section div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex: 1 1 calc(25% - 20px);
+}
+section div img {
+  width: 70%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border: none;
 }
 
 /*# sourceMappingURL=style.css.map */
