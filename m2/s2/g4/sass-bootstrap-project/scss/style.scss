@@ -1,0 +1,54 @@
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "colors";
+
+body {
+  background-color: #f5f4f8;
+}
+.heroImg {
+  background-image: url(../assets/hero-img.png);
+  width: 100%;
+  height: auto;
+}
+
+#hero-section {
+  background-color: $hero-color;
+  h1 {
+    font-weight: 700;
+  }
+  p {
+    font-weight: 500;
+  }
+  button:nth-of-type(1) {
+    background-color: $btn-green;
+  }
+  button {
+    font-weight: 500;
+  }
+}
+
+#record-section {
+  background-color: white;
+  .circle {
+    display: inline-block;
+    padding: 20px;
+    border-radius: 50%;
+    background-color: #ffeeda;
+    margin-bottom: 10px;
+
+    svg {
+      height: 30px;
+      width: 30px;
+      fill: #bc8159;
+    }
+  }
+}
+
+footer {
+  p,
+  a {
+    color: gray;
+    text-decoration: none;
+    margin-inline: 10px;
+    font-size: 16px;
+  }
+}

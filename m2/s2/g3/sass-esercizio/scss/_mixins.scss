@@ -8,7 +8,9 @@
   border: $border;
 }
 
-@mixin grid($direction) {
+@mixin grid($direction, $justify: flex-start, $align: flex-start) {
   display: flex;
   flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
 }
