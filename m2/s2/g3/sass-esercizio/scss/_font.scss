@@ -3,8 +3,3 @@ $font-default: Arial, Helvetica, sans-serif;
 // $fs-base: 16px;
 // $fs-large: 1.25em;
 // $fs-small: 0.875em;
-
-@mixin font-style($size, $weight) {
-  font-size: $size;
-  font-weight: $weight;
-}

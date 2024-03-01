@@ -1,0 +1,26 @@
+// @mixin floating(
+//   $radius: 10px,
+//   $shadow: 0 4px 8px rgba(0, 0, 0, 0.3),
+//   $border: none
+// ) {
+//   border-radius: $radius;
+//   box-shadow: $shadow;
+//   border: $border;
+// }
+
+@mixin grid($direction, $justify: flex-start, $align: flex-start) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin font-style($size, $weight) {
+  font-size: $size;
+  font-weight: $weight;
+}
+@mixin btn-grey {
+  background-color: transparent;
+  padding-inline: 8px;
+  border: 1px solid gray;
+}

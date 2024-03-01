@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nrtflix-clone</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header id="header">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"
+            ><img class="logo" src="assets/netflix_logo.png" alt="" />
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="container-profile">
+      <div class="container column">
+        <div class="column-title container-fluid mb-4">
+          <h1 class="text-white pb-0">Edit Profile</h1>
+        </div>
+
+        <div class="column-input">
+          <img src="assets/avatar.png" alt="" />
+          <div class="column2">
+            <input class="inp mb-4" type="text" placeholder="Strive Student" />
+            <div class="language">
+              <p class="mb-1">Language:</p>
+              <div class="dropdown">
+                <button
+                  class="dropdown-toggle text-white"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  English
+                </button>
+              </div>
+            </div>
+            <p>Maturity Settings:</p>
+            <p>ALL MATURITY RATINGS</p>
+            <p>Show titles of all maturity ratings for this profile.</p>
+            <button>EDIT</button>
+            <div class="line"></div>
+            <p>Autoplay controls</p>
+            <div class="row flex-column mb-3">
+              <div class="col">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="flexCheckDefault"
+                  />
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Autoplay next episode in a series on all devices
+                  </label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="flexCheckChecked"
+                    checked
+                  />
+                  <label class="form-check-label" for="flexCheckChecked">
+                    Autoplay previews while browsing on all devices
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-btn d-flex gap-4 pt-3">
+          <button>SAVE</button>
+          <button>CANCEL</button>
+          <button>DELETE PROFILE</button>
+        </div>
+      </div>
+    </main>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

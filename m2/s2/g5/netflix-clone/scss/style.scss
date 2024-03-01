@@ -1,0 +1,208 @@
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../node_modules/@splidejs/splide/dist/css/splide.min.css";
+@import "colors";
+@import "mixins";
+
+body {
+  background-color: $bg-color;
+}
+#header {
+  // background-color: $bg-color;
+  .logo {
+    width: 100px;
+    height: 50px;
+  }
+
+  a {
+    &:hover {
+      @include font-style(18px, 500);
+    }
+  }
+}
+
+#main {
+  background-color: $bg-color;
+
+  #title-section {
+    @include grid(flex);
+
+    h1 {
+      @include font-style(17px, 500);
+
+      @media screen and (min-width: 726px) {
+        @include font-style(30px, 500);
+      }
+    }
+    padding: 20px;
+    button {
+      @include btn-grey;
+      @include font-style(16px, 500);
+      svg {
+        fill: gray;
+      }
+    }
+
+    .column {
+      @include grid(flex, flex-start, center);
+      gap: 20px;
+    }
+    .column2 {
+      @include grid(flex, flex-end, center);
+
+      margin-right: 20px;
+    }
+    div {
+      width: 50%;
+    }
+  }
+  #trending-section {
+    @include grid(column);
+
+    .carousel {
+      @include grid(flex);
+
+      img {
+        width: 300px;
+      }
+    }
+  }
+}
+
+#footer {
+  @include font-style(16px, 500);
+  .social-row {
+    padding-bottom: 20px;
+  }
+  svg {
+    color: grey;
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+  }
+  a {
+    color: grey;
+  }
+  button {
+    @include btn-grey;
+    color: gray;
+    @include font-style(16px, 500);
+  }
+  p {
+    color: grey;
+  }
+}
+
+#container-profile {
+  padding-top: 70px;
+  .column {
+    .column-title {
+      border-bottom: 1px solid gray;
+    }
+    @include grid(column);
+
+    width: 560px;
+
+    h1 {
+      @include font-style(60px, 400);
+    }
+
+    .column-input {
+      color: white;
+      @include grid(flex);
+      gap: 20px;
+      width: 100%;
+      border-bottom: 1px solid grey;
+      img {
+        width: 130px;
+        height: 130px;
+      }
+      .column2 {
+        .inp {
+          background-color: grey;
+          border: none;
+          height: 40px;
+          color: white;
+          width: 100%;
+          @include font-style(18px, 400);
+          &::placeholder {
+            padding-left: 5px;
+            color: white;
+            @include font-style(18px, 400);
+          }
+        }
+        .language {
+          border-bottom: 1px solid grey;
+          margin-bottom: 20px;
+          padding-bottom: 10px;
+          button {
+            @include btn-grey;
+            @include font-style(14px, 500);
+          }
+        }
+        p:nth-of-type(1) {
+          @include font-style(16px, 500);
+          color: grey;
+        }
+        p:nth-of-type(2) {
+          @include font-style(15px, 500);
+          padding: 5px;
+          width: 48%;
+          background-color: rgb(59, 59, 59);
+          margin-bottom: 5px;
+        }
+        button {
+          color: grey;
+          @include btn-grey;
+          @include font-style(13px, 650);
+          padding: 2px 15px;
+          margin-bottom: 20px;
+        }
+        p:nth-of-type(4) {
+          @include font-style(16px, 500);
+          color: rgb(155, 155, 155);
+          margin-bottom: 10px;
+        }
+
+        .form-check-input {
+          background-color: transparent;
+          border-radius: 0;
+          border: 1px solid grey;
+          width: 30px;
+          height: 30px;
+          padding-bottom: 20px;
+          margin-right: 10px;
+        }
+        .form-check-label {
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+}
+.d-btn {
+  button {
+    @include font-style(17px, 600);
+    color: grey;
+    padding: 5px 20px;
+    background-color: transparent;
+    border: 1px solid grey;
+    letter-spacing: 5px;
+  }
+  button:nth-of-type(1) {
+    @include font-style(17px, 650);
+    color: black;
+    padding: 5px 20px;
+    background-color: white;
+    border: none;
+    letter-spacing: 5px;
+  }
+}
+.line {
+  border: 1px solid rgb(92, 92, 92);
+  width: 100%;
+}
+
+#main-billing {
+  background-color: white;
+  height: 100vh;
+}
