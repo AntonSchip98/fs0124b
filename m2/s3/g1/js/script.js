@@ -39,6 +39,31 @@ class Pet {
     this.ownerName = _ownerName;
     this.species = _species;
     this.breed = _breed;
+
+    this.initList();
+  }
+
+  initList() {
+    const form = document.querySelector("#form");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const inputValues = document.querySelectorAll("input");
+      let params = [];
+
+      inputValues.forEach((el) => {
+        params.push(el.value);
+      });
+
+      let newPet = new Pet(...params);
+
+      const listContainer = document.querySelector(".list-container");
+      const ul = document.createElement("ul");
+      const li = document.createElement("li");
+
+      listContainer.append(ul);
+      li.textContent = `Name: ${newPet.petName}, Owner: ${newPet.ownerName}, Species: ${newPet.species}, Breed: ${newPet.breed}`;
+      ul.append(li);
+    });
   }
 
   static hasSameOwner(pet1, pet2) {
@@ -52,27 +77,8 @@ class Pet {
     }
   }
 }
-const form = document.querySelector("#form");
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const inputValues = document.querySelectorAll("input");
-  let params = [];
 
-  inputValues.forEach((el) => {
-    params.push(el.value);
-  });
-
-  let newPet = new Pet(...params);
-
-  const listContainer = document.querySelector(".list-container");
-  const ul = document.createElement("ul");
-  const li = document.createElement("li");
-
-  listContainer.append(ul);
-  li.textContent = `Name: ${newPet.petName}, Owner: ${newPet.ownerName}, Species: ${newPet.species}, Breed: ${newPet.breed}`;
-  ul.append(li);
-});
-
+new Pet();
 // let argo = new Pet("argo", "dario", "dog", "bastardino");
 // let zen = new Pet("zen", "dario", "dog", "akita");
 // console.log(Pet.hasSameOwner(argo, zen));
