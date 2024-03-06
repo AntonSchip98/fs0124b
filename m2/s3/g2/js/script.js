@@ -29,5 +29,3 @@ form.addEventListener("submit", (e) => {
     }
   }
 });
-
-// ESERCIZIO 2:

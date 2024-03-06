@@ -1,3 +1,4 @@
+// ESERCIZIO 2:
 let h1 = document.querySelector("h1");
 let seconds = 0;
 
