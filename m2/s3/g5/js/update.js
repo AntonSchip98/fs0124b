@@ -5,8 +5,6 @@ const apiKey =
   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWVhZGE4NTJkN2IxMTAwMTkwZTZkZjIiLCJpYXQiOjE3MDk4OTAxODEsImV4cCI6MTcxMTA5OTc4MX0.yiZeHOSSs45-l2pcM08ZnyxALMjy-L3POlgASv7Sya0";
 let endPoint = `https://striveschool-api.herokuapp.com/api/product/${id}`;
 
-console.log(id);
-
 document.addEventListener("DOMContentLoaded", function () {
   fetch(endPoint, {
     method: "GET",
@@ -66,49 +64,58 @@ btnSave.addEventListener("click", (e) => {
 });
 // BOTTONE PER IL RESET DEL FORM(STESSA FETCH CALL, FARE UNA FUNZIONE)
 const btnReset = document.querySelector("#reset");
-btnReset.addEventListener("click", () => {
-  fetch(endPoint, {
-    method: "GET",
-    headers: {
-      Authorization: apiKey,
-    },
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data);
+btnReset.addEventListener("click", (e) => {
+  let confirmDelete = confirm(
+    "Le modifiche attuali andranno perse, sei sicuro di voler resettare?"
+  );
+  if (!confirmDelete) {
+    e.preventDefault();
+  } else {
+    fetch(endPoint, {
+      method: "GET",
+      headers: {
+        Authorization: apiKey,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
 
-      let nameEdit = document.querySelector("#name");
-      let brandEdit = document.querySelector("#brand");
-      let priceEdit = document.querySelector("#price");
-      let imageUrlEdit = document.querySelector("#imageUrl");
-      let descriptionEdit = document.querySelector("#description");
+        let nameEdit = document.querySelector("#name");
+        let brandEdit = document.querySelector("#brand");
+        let priceEdit = document.querySelector("#price");
+        let imageUrlEdit = document.querySelector("#imageUrl");
+        let descriptionEdit = document.querySelector("#description");
 
-      nameEdit.value = data.name;
-      brandEdit.value = data.brand;
-      priceEdit.value = data.price;
-      imageUrlEdit.value = data.imageUrl;
-      descriptionEdit.value = data.description;
-    });
+        nameEdit.value = data.name;
+        brandEdit.value = data.brand;
+        priceEdit.value = data.price;
+        imageUrlEdit.value = data.imageUrl;
+        descriptionEdit.value = data.description;
+      });
+  }
 });
 
 // BOTTONE PER IL DELETE DEL PRODOTTO:
 const btnDelete = document.querySelector("#delete");
 btnDelete.addEventListener("click", (e) => {
-  var confirmDelete = confirm("Sei sicuro di voler cancellare?");
+  let confirmDelete = confirm("Sei sicuro di voler cancellare?");
+
   if (!confirmDelete) {
-    e.preventDefault(); // Impedisce l'evento predefinito (ad esempio l'invio del form)
+    e.preventDefault();
+  } else {
+    e.preventDefault();
+    fetch(endPoint, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: apiKey,
+      },
+    })
+      .then((res) => res.json())
+      .then((el) => {
+        console.log("elemento eliminato" + el);
+        location.href = "home.html";
+      });
   }
-  e.preventDefault();
-  fetch(endPoint, {
-    method: "DELETE",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: apiKey,
-    },
-  })
-    .then((res) => res.json())
-    .then((el) => {
-      console.log("elemento eliminato" + el);
-      location.href = "home.html";
-    });
 });

@@ -2,8 +2,11 @@ const apiKey =
   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWVhZGE4NTJkN2IxMTAwMTkwZTZkZjIiLCJpYXQiOjE3MDk4OTAxODEsImV4cCI6MTcxMTA5OTc4MX0.yiZeHOSSs45-l2pcM08ZnyxALMjy-L3POlgASv7Sya0";
 const endPoint = "https://striveschool-api.herokuapp.com/api/product/";
 const contaierProduct = document.querySelector("#product-container");
+const loading = document.getElementById("loading-spinner");
 
 document.addEventListener("DOMContentLoaded", function () {
+  loading.style.display = "inline";
+
   fetch(endPoint, {
     method: "GET",
     headers: {
@@ -31,20 +34,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
         contaierProduct.append(cardProduct);
       });
+
+      loading.style.display = "none";
     })
     .catch((error) => {
       console.error("Errore durante la richiesta:", error);
+
+      loading.style.display = "none";
     });
 });
-
-// function call(url, method) {
-//   return fetch(url, {
-//     method: method,
-//     headers: {
-//       authorization: apiKey,
-//     },
-//   });
-// }
 
 function generaClone() {
   let template = document.querySelector("#card-template");

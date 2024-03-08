@@ -2,8 +2,6 @@ const apiKey =
   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWVhZGE4NTJkN2IxMTAwMTkwZTZkZjIiLCJpYXQiOjE3MDk4OTAxODEsImV4cCI6MTcxMTA5OTc4MX0.yiZeHOSSs45-l2pcM08ZnyxALMjy-L3POlgASv7Sya0";
 const endPoint = "https://striveschool-api.herokuapp.com/api/product/";
 
-async function getCall(query) {}
-
 const btnSave = document.querySelector("#save");
 btnSave.addEventListener("click", (e) => {
   e.preventDefault();
