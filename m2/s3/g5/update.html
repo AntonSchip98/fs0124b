@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Amazon Update</title>
     <link
       rel="stylesheet"
       href="node_modules/bootstrap/dist/css/bootstrap.min.css"
@@ -27,12 +27,12 @@
     </header>
 
     <main class="container">
-      <h1 class="pt-4">Edit Product</h1>
+      <h1 class="pt-4 fw-bold">Edit Product</h1>
       <div class="container border-top border-secondary">
         <form>
           <div class="mb-3 mt-3">
-            <label for="productName" class="form-label"
-              >Nome del prodotto</label
+            <label for="productName" class="form-label fw-semibold"
+              >Nome del prodotto:</label
             >
             <input
               type="text"
@@ -42,7 +42,7 @@
             />
           </div>
           <div class="mb-3">
-            <label for="brand" class="form-label">Brand</label>
+            <label for="brand" class="form-label fw-semibold">Brand:</label>
             <input
               type="text"
               class="form-control"
@@ -51,7 +51,7 @@
             />
           </div>
           <div class="mb-3">
-            <label for="price" class="form-label">Prezzo</label>
+            <label for="price" class="form-label fw-semibold">Prezzo:</label>
             <input
               type="number"
               class="form-control"
@@ -60,7 +60,9 @@
             />
           </div>
           <div class="mb-3">
-            <label for="imageUrl" class="form-label">URL dell'immagine</label>
+            <label for="imageUrl" class="form-label fw-semibold"
+              >URL dell'immagine:</label
+            >
             <input
               type="text"
               class="form-control"
@@ -69,8 +71,8 @@
             />
           </div>
           <div class="mb-3">
-            <label for="productDescription" class="form-label"
-              >Descrizione del prodotto</label
+            <label for="productDescription" class="form-label fw-semibold"
+              >Descrizione del prodotto:</label
             >
             <textarea
               class="form-control"
@@ -87,18 +89,18 @@
             </div>
             <div class="row col-6 justify-content-end gap-3">
               <button
-                id="save"
-                type="submit"
-                class="col-5 btn btn-outline-secondary fs-5 fw-bold"
-              >
-                Save
-              </button>
-              <button
                 id="reset"
                 type="reset"
-                class="col-5 btn btn-warning fs-5 fw-bold"
+                class="col-5 btn btn-outline-secondary fs-5 fw-bold"
               >
                 Reset
+              </button>
+              <button
+                id="save"
+                type="submit"
+                class="col-5 btn-warning btn fs-5 fw-bold"
+              >
+                Save
               </button>
             </div>
           </div>

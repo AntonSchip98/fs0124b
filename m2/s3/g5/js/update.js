@@ -27,6 +27,9 @@ document.addEventListener("DOMContentLoaded", function () {
       priceEdit.value = data.price;
       imageUrlEdit.value = data.imageUrl;
       descriptionEdit.value = data.description;
+    })
+    .catch((err) => {
+      alert("Errore durante la richiesta:", err);
     });
 });
 
@@ -60,6 +63,9 @@ btnSave.addEventListener("click", (e) => {
     .then((res) => res.json())
     .then((res) => {
       location.href = "home.html";
+    })
+    .catch((err) => {
+      alert("Errore durante la richiesta:", err);
     });
 });
 // BOTTONE PER IL RESET DEL FORM(STESSA FETCH CALL, FARE UNA FUNZIONE)
@@ -116,6 +122,9 @@ btnDelete.addEventListener("click", (e) => {
       .then((el) => {
         console.log("elemento eliminato" + el);
         location.href = "home.html";
+      })
+      .catch((err) => {
+        alert("Errore durante la richiesta:", err);
       });
   }
 });

@@ -20,7 +20,7 @@ btnSave.addEventListener("click", (e) => {
     price,
   };
   // impedisce la creazione se i campi non sono compilati
-  if (!name || !price || !imageUrl) {
+  if (!name || !price || !imageUrl || !brand || !description) {
     alert("Assicurati di compilare tutti i campi.");
     e.preventDefault();
   } else {
@@ -38,7 +38,7 @@ btnSave.addEventListener("click", (e) => {
         location.href = "home.html";
       })
       .catch((err) => {
-        console.log("errore", err);
+        alert("errore", err);
       });
   }
 });

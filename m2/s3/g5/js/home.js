@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
       loading.style.display = "none";
     })
     .catch((error) => {
-      console.error("Errore durante la richiesta:", error);
+      alert("Errore durante la richiesta:", error);
 
       loading.style.display = "none";
     });

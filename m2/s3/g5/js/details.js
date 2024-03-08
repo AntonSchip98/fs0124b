@@ -31,6 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
       brandCard.innerText = product.brand;
     })
     .catch((error) => {
-      console.error("Errore durante la richiesta:", error);
+      alert("Errore durante la richiesta:", error);
     });
 });
