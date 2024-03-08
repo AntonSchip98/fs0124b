@@ -89,7 +89,18 @@
             </p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary">
+                <button
+                  id="btn-view"
+                  type="button"
+                  class="btn btn-sm btn-outline-secondary"
+                >
+                  View
+                </button>
+                <button
+                  id="btn-hide"
+                  type="button"
+                  class="btn btn-sm btn-outline-secondary"
+                >
                   Hide
                 </button>
               </div>
@@ -234,14 +245,16 @@
               let card = generaClone();
               let cardImg = card.querySelector(".card-img-top");
               cardImg.src = el.src.landscape;
+              infoImg(cardImg, el.src.landscape);
 
               let cardTitle = card.querySelector(".card-title");
               cardTitle.innerText = el.alt;
+              infoImg(cardTitle, el.alt);
 
               let smallCard = card.querySelector(".text-muted");
               smallCard.innerText = `id: n° ${el.id}`;
 
-              let btnHide = card.querySelector(".btn");
+              let btnHide = card.querySelector("#btn-hide");
 
               btnHide.addEventListener("click", (e) => {
                 e.currentTarget.closest(".card").remove();
@@ -258,6 +271,15 @@
           headers: {
             authorization: apiKey,
           },
+        });
+      }
+      function infoImg(el, info) {
+        el.addEventListener("click", () => {
+          // const img = info.src;
+          // const title = info.alt;
+          console.log(info);
+
+          window.location.href = `img-info.html?title=${info}`;
         });
       }
 

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar bg-dark mb-5">
+        <div class="container-fluid mx-5">
+          <a class="navbar-brand" href="#">
+            <img class="logo" src="assets/img/images.png" alt="Bootstrap" />
+          </a>
+          <a class="text-white fw-semibold" href="home.html">Back Home</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <h1 class="pt-4">Edit Product</h1>
+      <div class="container border-top border-secondary">
+        <form>
+          <div class="mb-3 mt-3">
+            <label for="productName" class="form-label"
+              >Nome del prodotto</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Inserisci il nome del prodotto"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="brand" class="form-label">Brand</label>
+            <input
+              type="text"
+              class="form-control"
+              id="brand"
+              placeholder="Inserisci il brand"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="price" class="form-label">Prezzo</label>
+            <input
+              type="number"
+              class="form-control"
+              id="price"
+              placeholder="Inserisci il prezzo"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="imageUrl" class="form-label">URL dell'immagine</label>
+            <input
+              type="text"
+              class="form-control"
+              id="imageUrl"
+              placeholder="Inserisci l'URL dell'immagine"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="productDescription" class="form-label"
+              >Descrizione del prodotto</label
+            >
+            <textarea
+              class="form-control"
+              id="description"
+              rows="3"
+              placeholder="Inserisci la descrizione del prodotto"
+            ></textarea>
+          </div>
+          <button id="save" type="submit" class="btn btn-primary">Save</button>
+          <button id="reset" type="reset" class="btn btn-secondary">
+            Reset
+          </button>
+          <button id="delete" class="btn btn-danger">Delete</button>
+        </form>
+      </div>
+    </main>
+
+    <script src="js/update.js"></script>
+  </body>
+</html>
