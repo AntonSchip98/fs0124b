@@ -21,13 +21,13 @@ document.addEventListener("DOMContentLoaded", function () {
       let cardImg = document.querySelector(".img-fluid");
       let cardTitle = document.querySelector("#title");
       let descriptionCard = document.querySelector("#description");
-      let priceCard = document.querySelector("#price");
+      let priceCard = document.querySelector("#price-details");
       let brandCard = document.querySelector("#brand");
 
       cardImg.src = product.imageUrl;
       cardTitle.innerText = product.name;
       descriptionCard.innerText = product.description;
-      priceCard.innerText = product.price;
+      priceCard.innerText = `€${product.price}`;
       brandCard.innerText = product.brand;
     })
     .catch((error) => {

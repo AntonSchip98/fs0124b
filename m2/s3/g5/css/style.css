@@ -5,3 +5,17 @@ img {
   width: 100px;
   height: 40px;
 }
+#price-details {
+  background-color: black;
+  padding: 5px 10px;
+  display: inline-block;
+  border-radius: 20px;
+}
+.card:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+.rounded-start:hover {
+  transform: scale(1.5);
+  transition: transform 0.3s ease;
+}

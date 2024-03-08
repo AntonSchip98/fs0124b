@@ -42,12 +42,3 @@ btnSave.addEventListener("click", (e) => {
       });
   }
 });
-
-// function call(url, method) {
-//   return fetch(url, {
-//     method: method,
-//     headers: {
-//       Authorization: apiKey,
-//     },
-//   });
-// }
