@@ -1,21 +1,14 @@
-const apiKey =
-  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWVhZGE4NTJkN2IxMTAwMTkwZTZkZjIiLCJpYXQiOjE3MDk4OTAxODEsImV4cCI6MTcxMTA5OTc4MX0.yiZeHOSSs45-l2pcM08ZnyxALMjy-L3POlgASv7Sya0";
-const endPoint = "https://striveschool-api.herokuapp.com/api/product/";
+import Swal from "../node_modules/sweetalert2/src/sweetalert2.js";
+import { getCall, generaClone, endPoint } from "./functions.js";
+
 const contaierProduct = document.querySelector("#product-container");
 const loading = document.getElementById("loading-spinner");
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async () => {
   loading.style.display = "inline";
-
-  fetch(endPoint, {
-    method: "GET",
-    headers: {
-      Authorization: apiKey,
-    },
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      data.forEach((product) => {
+  getCall(endPoint)
+    .then((res) =>
+      res.forEach((product) => {
         let cardProduct = generaClone();
 
         let cardImg = cardProduct.querySelector(".card-img-top");
@@ -33,20 +26,16 @@ document.addEventListener("DOMContentLoaded", function () {
         btnInfo.href = `details.html?id=${product._id}`;
 
         contaierProduct.append(cardProduct);
+        loading.style.display = "none";
+      })
+    )
+    .catch((err) => {
+      Swal.fire({
+        icon: "error",
+        title: "Errore durante il caricamento dei dati",
+        text: err,
       });
-
-      loading.style.display = "none";
-    })
-    .catch((error) => {
-      alert("Errore durante la richiesta:", error);
 
       loading.style.display = "none";
     });
 });
-
-function generaClone() {
-  let template = document.querySelector("#card-template");
-  let clone = template.content.cloneNode(true);
-
-  return clone;
-}

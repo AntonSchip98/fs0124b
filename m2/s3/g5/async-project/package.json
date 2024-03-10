@@ -1,5 +1,5 @@
 {
-  "name": "g5",
+  "name": "async-project",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^5.3.3"
+    "bootstrap": "^5.3.3",
+    "sweetalert2": "^11.10.6"
   }
 }
