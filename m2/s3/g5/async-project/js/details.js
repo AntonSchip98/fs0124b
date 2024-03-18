@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
       priceCard.innerText = `€${product.price}`;
       brandCard.innerText = product.brand;
     })
-    .catch((error) => {
+    .catch((err) => {
       Swal.fire({
         icon: "error",
         title: "Errore durante il caricamento dei dati",
