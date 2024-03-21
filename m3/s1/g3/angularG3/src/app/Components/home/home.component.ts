@@ -12,7 +12,7 @@ export class HomeComponent {
   ngOnInit() {
     fetch('../assets/db.json')
       .then((posts) => posts.json())
-      .then((post) => (this.postArr = post.posts));
+      .then((post) => (this.postArr = post.posts[0]));
   }
 
   truncateText(text: string, maxLength: number): string {
@@ -24,7 +24,9 @@ export class HomeComponent {
   }
 
   home() {
-    this.ngOnInit();
+    fetch('../assets/db.json')
+      .then((posts) => posts.json())
+      .then((post) => (this.postArr = post.posts));
   }
 
   onlyActive() {
