@@ -13,14 +13,14 @@ export class PostService {
   }
 
   getActivePost(): Promise<iPost[]> {
-    return fetch('../assets/db.json')
-      .then((res) => res.json())
-      .then((posts) => posts.posts.filter((el: iPost) => el.active));
+    return this.getAllPost().then((posts) =>
+      posts.filter((el: iPost) => el.active)
+    );
   }
 
   getInactivePost(): Promise<iPost[]> {
-    return fetch('../assets/db.json')
-      .then((res) => res.json())
-      .then((posts) => posts.posts.filter((el: iPost) => !el.active));
+    return this.getAllPost().then((posts) =>
+      posts.filter((el: iPost) => !el.active)
+    );
   }
 }
