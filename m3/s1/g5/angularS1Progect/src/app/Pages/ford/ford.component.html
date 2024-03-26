@@ -1,0 +1,49 @@
+<div
+  class="container bg-secondary-subtle d-flex align-items-center justify-content-center mt-3 gap-4"
+>
+  <img
+    class="col-12 col-lg-3 m-3 img-fluid w-25 w-lg-100 my-5"
+    src="../../../assets/img/ford.png"
+    alt=""
+    height="150px"
+    width="20px"
+  />
+  <p class="col-8 fs-1 d-none d-lg-block">Le nuove auto Ford</p>
+</div>
+
+<div
+  class="container mt-5 d-flex flex-column flex-lg-row align-items-center justify-content-lg-around gap-5"
+>
+  <div
+    *ngFor="let car of carArr"
+    [ngStyle]="{ border: car.available ? '2px solid green' : '2px solid red' }"
+    class="col-9 col-lg-3"
+  >
+    <img [src]="car.modelImage" class="img" alt="..." />
+
+    <h5
+      class="card-title text-center my-3 fw-bold fs-3"
+      [ngStyle]="{ color: car.available ? 'green' : 'red' }"
+    >
+      {{ car.model }}
+    </h5>
+
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item text-center fw-bold">Anno: {{ car.year }}</li>
+      <li class="list-group-item text-center fw-bold">
+        Prezzo: {{ car.price | currency : "EUR" }}
+      </li>
+      <li class="list-group-item text-center fw-bold">
+        <p class="mb-0" *ngIf="car.available">Pronta consegna: SI</p>
+        <p class="mb-0" *ngIf="!car.available">Pronta Consegna: NO</p>
+      </li>
+      <li class="list-group-item text-center fw-bold">
+        <a
+          [routerLink]="['/car', car.id]"
+          class="card-link text-decoration-none text-center py-3 fs"
+          >{{ car.model }} details</a
+        >
+      </li>
+    </ul>
+  </div>
+</div>
