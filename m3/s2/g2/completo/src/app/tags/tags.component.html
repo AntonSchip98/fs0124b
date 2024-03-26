@@ -1,0 +1,18 @@
+<section class="row">
+  <app-single-post #singlePost *ngFor="let post of tagArr" [post]="post">
+    <div class="d-flex flex-column">
+      <input
+        type="text"
+        [(ngModel)]="post.title"
+        class="card-title form-control"
+      />
+      <textarea
+        cols="30"
+        rows="5"
+        class="card-text form-control"
+        [(ngModel)]="post.body"
+      ></textarea>
+      <button class="btn btn-success mt-2" (click)="editPost()">SAVE</button>
+    </div>
+  </app-single-post>
+</section>
