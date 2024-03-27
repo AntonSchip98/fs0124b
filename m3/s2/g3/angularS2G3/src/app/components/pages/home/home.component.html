@@ -1,0 +1,53 @@
+<div *ngIf="product.length == 0" class="alert alert-info">
+  Caricamento in corso
+</div>
+
+<div class="container">
+  <div class="row gap-3">
+    <div class="card" style="width: 18rem" *ngFor="let snglProd of product">
+      <img
+        [src]="snglProd.images[0]"
+        class="card-img-top"
+        alt="..."
+        style="height: 15rem"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ snglProd.title }}</h5>
+        <p class="card-text">
+          {{ snglProd.description }}
+        </p>
+        <div class="row gap-2">
+          <a class="col-5 btn btn-danger" (click)="addToFavourites(snglProd.id)"
+            >Favourites</a
+          >
+          <a class="col-5 btn btn-success">Cart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <hr />
+<h1>Favourites</h1>
+<div class="container">
+  <div class="row gap-3">
+    <div class="card" style="width: 18rem" *ngFor="let snglProd of favourites">
+      <img
+        [src]="snglProd.images[0]"
+        class="card-img-top"
+        alt="..."
+        style="height: 15rem"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ snglProd.title }}</h5>
+        <p class="card-text">
+          {{ snglProd.description }}
+        </p>
+        <div class="row gap-2">
+          <a class="col-5 btn btn-danger">Favourites</a>
+          <a class="col-5 btn btn-success">Cart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
