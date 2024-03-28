@@ -1,0 +1,23 @@
+<form>
+  <input
+    name="title"
+    type="text"
+    placeholder="Image Title"
+    class="form-control"
+  />
+  <input name="url" type="text" placeholder="Url" class="form-control" />
+  <input
+    name="albumId"
+    type="number"
+    placeholder="Alnum Id"
+    class="form-control"
+  />
+
+  <button (click)="savePhoto()" class="btn btn-primary">Crea</button>
+</form>
+
+<div *ngIf="newPhoto" class="alert alert-success">
+  la pizza id:{{ newPhoto.id }} chiamata {{ newPhoto.title }} è stata creata con
+  successo.<br />
+  Verrai reindirizzato tra 5 secondi.
+</div>
