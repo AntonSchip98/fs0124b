@@ -13,15 +13,12 @@
         [(ngModel)]="snglTodo.completed"
         id="flexCheckDefault"
         [checked]="snglTodo.completed"
-        (change)="toggleTodoCompleted()"
+        (change)="onTodoStatusChange()"
       />
       <h5 class="fw-bold">{{ snglTodo.todo }}</h5>
       <p class="mb-0">
         Assigned to:
-        <!-- <span class="fw-bold"
-          >{{ users[snglTodo.userId - 1].firstName }}
-          {{ users[snglTodo.userId - 1].lastName }}</span
-        > -->
+        <span class="fw-bold">{{ snglTodo.username }} </span>
       </p>
     </div>
   </div>

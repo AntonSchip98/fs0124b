@@ -1,3 +1,15 @@
+<div class="input-group mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-default">User Name</span>
+  <input
+    type="text"
+    [(ngModel)]="inputValue"
+    class="form-control"
+    aria-label="Sizing example input"
+    aria-describedby="inputGroup-sizing-default"
+    (keyup)="searchUserName()"
+  />
+</div>
+
 <div class="container">
   <div class="row gap-0">
     <div *ngFor="let todo of todos" [snglTodo]="todo" class="app-card"></div>

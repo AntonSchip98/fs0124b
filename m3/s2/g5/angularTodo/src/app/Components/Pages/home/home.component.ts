@@ -13,14 +13,31 @@ export class HomeComponent {
   todos: ITodo[] = [];
   users: IUser[] = [];
 
+  inputValue: string = '';
+
   constructor(private todoSvc: TodoService, private userSvc: UserService) {}
 
   ngOnInit() {
     this.todoSvc.$todos.subscribe((todo) => {
       this.todos = todo;
     });
-    console.log(this.todos);
+    this.userSvc.$users.subscribe((user) => {
+      this.users = user;
+
+      this.todos.forEach((todo) => {
+        this.todoSvc.getUsername(todo, user);
+      });
+    });
+
     // this.todos = this.todoSvc.getAllTasks();
     // this.users = this.userSvc.getAllUsers();
+  }
+
+  searchUserName() {
+    this.todoSvc.$todos.subscribe((todo) => {
+      this.todos = todo.filter((todo) =>
+        todo.username!.toLowerCase().includes(this.inputValue.toLowerCase())
+      );
+    });
   }
 }

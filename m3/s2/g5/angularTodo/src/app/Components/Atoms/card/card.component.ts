@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ITodo } from '../../../Interfaces/i-todo';
 
 @Component({
@@ -8,6 +8,9 @@ import { ITodo } from '../../../Interfaces/i-todo';
 })
 export class CardComponent {
   @Input() snglTodo!: ITodo;
+  @Output() todoStatusChanged = new EventEmitter<boolean>();
 
-  toggleTodoCompleted() {}
+  onTodoStatusChange() {
+    this.todoStatusChanged.emit(this.snglTodo.completed);
+  }
 }

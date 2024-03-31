@@ -820,8 +820,4 @@ export class UserService {
   getAllUsers(): Observable<IUser[]> {
     return this.usersSubject.asObservable();
   }
-
-  // getUserById(id: number) {
-  //   return this.users.filter((user) => user.id === id);
-  // }
 }

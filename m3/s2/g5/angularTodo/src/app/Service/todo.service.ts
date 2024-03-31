@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ITodo } from '../Interfaces/i-todo';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { IUser } from '../Interfaces/i-user';
 
 @Injectable({
   providedIn: 'root',
@@ -919,16 +920,20 @@ export class TodoService {
     this.todosSubject.next(this.todoArr);
   }
 
+  // Metodo per inserire
+  getUsername(todo: ITodo, users: IUser[]) {
+    const user = users.find((u) => u.id === todo.userId);
+    if (user) {
+      todo.username = `${user.firstName} ${user.lastName}`;
+    }
+  }
+
+  getTodoById(id: number): ITodo[] {
+    return this.todoArr.filter((todo) => todo.userId == id);
+  }
+
   // getAllTasks(): ITodo[] {
   //   return this.todoArr;
-  // }
-
-  // getComplitedTasks(): ITodo[] {
-  //   return this.todoArr.filter((todo) => todo.completed);
-  // }
-
-  // getNotComplitedTasks(): ITodo[] {
-  //   return this.todoArr.filter((todo) => !todo.completed);
   // }
 
   // getTodoByUser(userId: number) {
