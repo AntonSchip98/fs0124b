@@ -1,0 +1,7 @@
+.app-card {
+  transition: transform 0.3s ease;
+}
+
+.app-card:hover {
+  transform: scale(1.05);
+}
