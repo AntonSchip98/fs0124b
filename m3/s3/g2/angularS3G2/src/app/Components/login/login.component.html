@@ -1,0 +1,22 @@
+<form (ngSubmit)="submit(f)" #f="ngForm">
+  <input
+    type="text"
+    require
+    name="username"
+    ngModel
+    class="form-control"
+    #username="ngModel"
+    placeholder="Username"
+  />
+  <input
+    type="password"
+    require
+    name="password"
+    ngModel
+    class="form-control"
+    #username="ngModel"
+    placeholder="Password"
+  />
+
+  <button class="btn btn-success">Login</button>
+</form>

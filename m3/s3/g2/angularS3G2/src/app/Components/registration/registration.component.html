@@ -1,0 +1,21 @@
+<form [formGroup]="register">
+  <input type="text" formControlName="name" placeholder="Name" />
+  <input type="text" formControlName="surname" placeholder="Surname" />
+  <input type="password" formControlName="password" placeholder="Password" />
+  <input
+    type="password"
+    formControlName="confirmPassword"
+    placeholder="Confirm Password"
+  />
+
+  <label>Gender:</label>
+  <select formControlName="select">
+    <option *ngFor="let g of genres" [value]="g">{{ g }}</option>
+  </select>
+
+  <textarea formControlName="biography" cols="30" rows="10"></textarea>
+
+  <input type="text" formControlName="username" placeholder="username" />
+
+  <button class="btn btn-success">Register</button>
+</form>
