@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "email": "hivet@mailinator.com",
+      "password": "$2a$10$K4pJmjnvRku6kY4tyE4eC.iXzA7VFOZmjy5.4dseAxSZdqJXHCyF.",
+      "name": "xyvyve@mailinator.com",
+      "id": 1
+    },
+    {
+      "email": "antonio@email.it",
+      "password": "$2a$10$CrMvguC233HudPVZL/QCyePgV/ok9rl6IMGtOTqU6JWY8Dnk13GG2",
+      "name": "antonio",
+      "id": 2
+    },
+    {
+      "email": "andrea@email.it",
+      "password": "$2a$10$NRUBYeZtz723BdUw7YjJa.vc48KXOj6QS4.qejb/1c6nareNDWatW",
+      "name": "andrea",
+      "id": 3
+    },
+    {
+      "email": "giacomo@email.it",
+      "password": "$2a$10$uMsbeTmNKG0PMYo9wDkGfuqueNOE7Y.QwBMJ/1kcXEwPTiQmJE1ba",
+      "name": "andrea",
+      "id": 4
+    },
+    {
+      "email": "franco@email.it",
+      "password": "$2a$10$H94BtbXJPkdpRNyU99JWcOl9DQ.mw1ufibkQGIWqsmMvLnf0nTQli",
+      "name": "franco",
+      "id": 5
+    },
+    {
+      "email": "piero@email.it",
+      "password": "$2a$10$iBzCpZavnU4k7sLvK0kR6.XzEFoqLcXbzeepVEd7sqOUQgX4Pe3uO",
+      "name": "piero",
+      "id": 6
+    },
+    {
+      "email": "mario@email.it",
+      "password": "$2a$10$mslRdedSDUZe94RkGQZcH.BD0ag1UWkpWvDPrEQeVprzrtUzHamXO",
+      "name": "mario",
+      "id": 7
+    }
+  ]
+}
