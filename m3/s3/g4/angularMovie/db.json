@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "email": "schipani@email.com",
+      "password": "$2a$10$aIXJm0078lv1ZnG.hYtqL.TGihcWpCuOlopiewI6bWWMaB/bXPUOq",
+      "name": "antonio",
+      "id": 1
+    },
+    {
+      "email": "beatrice@email.it",
+      "password": "$2a$10$hDenaGHnS1h4T41JgKUs1ul0DjK4EmZeNtKks.HaZw2ljYKVBp1gG",
+      "name": "beatrice",
+      "id": 2
+    }
+  ],
+  "movies-popular": [],
+  "favourites": []
+}

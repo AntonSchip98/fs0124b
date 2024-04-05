@@ -15,24 +15,28 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a
-            class="nav-link fw-bold"
-            routerLinkActive="activeLink"
+            class="nav-link active"
             aria-current="page"
+            *ngIf="!isUserLoggedIn"
             routerLink="/"
-            >Home</a
+            >Login</a
           >
         </li>
-        <li class="nav-item" *ngIf="isUserLoggedIn">
+        <li class="nav-item">
           <a
-            class="nav-link fw-bold"
-            routerLinkActive="activeLink"
-            routerLink="/dashboard"
-            >Dashboard</a
+            class="nav-link active"
+            aria-current="page"
+            *ngIf="!isUserLoggedIn"
+            routerLink="/register"
+            >Register</a
           >
         </li>
-        <li class="nav-item dropdown" *ngIf="!isUserLoggedIn">
+        <!-- <li class="nav-item" *ngIf="isUserLoggedIn">
+          <a class="nav-link" routerLink="/dashboard">Dashboard</a>
+        </li> -->
+        <li class="nav-item dropdown" *ngIf="isUserLoggedIn">
           <a
-            class="nav-link dropdown-toggle fw-bold"
+            class="nav-link dropdown-toggle"
             (click)="show = !show"
             role="button"
             data-bs-toggle="dropdown"
@@ -42,26 +46,24 @@
           </a>
           <ul class="dropdown-menu" [ngClass]="{show}">
             <li>
-              <a
-                class="dropdown-item"
-                routerLink="/auth/login"
-                (click)="show = !show"
-                >Login</a
+              <a class="dropdown-item" routerLink="/userProfile"
+                >User Profile</a
               >
             </li>
             <li><hr class="dropdown-divider" /></li>
             <li>
-              <a
-                class="dropdown-item"
-                routerLink="/auth/register"
-                (click)="show = !show"
-                >Register</a
+              <a class="dropdown-item" routerLink="/movieList">Movie List</a>
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <a class="dropdown-item" routerLink="/registeredUser"
+                >Registered User</a
               >
             </li>
           </ul>
         </li>
       </ul>
-      <button *ngIf="exitButton()" (click)="logout()" class="btn btn-danger">
+      <button (click)="logout()" *ngIf="isUserLoggedIn" class="btn btn-danger">
         Esci
       </button>
     </div>
