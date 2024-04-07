@@ -1,4 +1,6 @@
-<div class="container mt-5">
+<div class="container mt-4">
+  <h1 class="mb-3 fw-bold">Login</h1>
+  <hr class="border border-black container-fluid" />
   <form>
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Email address</label>
@@ -26,7 +28,7 @@
     </div>
 
     <button (click)="signIn()" type="submit" class="btn btn-primary">
-      Login
+      <fa-icon [icon]="faLogin"></fa-icon>
     </button>
   </form>
 </div>

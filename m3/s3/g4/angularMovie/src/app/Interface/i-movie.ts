@@ -4,4 +4,5 @@ export interface IMovie {
   title: string;
   releaseDate: string;
   genre: string;
+  favourites?: boolean;
 }

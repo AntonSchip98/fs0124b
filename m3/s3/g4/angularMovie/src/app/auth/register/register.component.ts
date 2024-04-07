@@ -9,12 +9,12 @@ import { Router } from '@angular/router';
   styleUrl: './register.component.scss',
 })
 export class RegisterComponent {
-  registeData: Partial<IUser> = {};
+  registerData: Partial<IUser> = {};
 
   constructor(private authSvc: AuthService, private router: Router) {}
 
   signUp() {
-    this.authSvc.register(this.registeData).subscribe((data) => {
+    this.authSvc.register(this.registerData).subscribe((data) => {
       this.router.navigate(['movieList']);
     });
   }

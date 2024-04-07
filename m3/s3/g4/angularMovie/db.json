@@ -1,18 +1,212 @@
 {
   "users": [
     {
-      "email": "schipani@email.com",
-      "password": "$2a$10$aIXJm0078lv1ZnG.hYtqL.TGihcWpCuOlopiewI6bWWMaB/bXPUOq",
+      "email": "antonio@email.it",
+      "password": "$2a$10$AVrghetfNUQ3tiFzz6lOaOTyqSQj690c.dNWS3fZpXknwMCMXVqNW",
       "name": "antonio",
-      "id": 1
+      "id": 1,
+      "favourites": [
+        {
+          "id": 1,
+          "urlImage": "https://picsum.photos/200",
+          "title": "The Godfather",
+          "releaseDate": "1972-03-24",
+          "genre": "Crime",
+          "favourites": true
+        }
+      ]
     },
     {
       "email": "beatrice@email.it",
-      "password": "$2a$10$hDenaGHnS1h4T41JgKUs1ul0DjK4EmZeNtKks.HaZw2ljYKVBp1gG",
+      "password": "$2a$10$QSjJHUOuf.IDDDPLvAX8W.7ZbInolD6jM.RHHJFtV69j71v0knDae",
       "name": "beatrice",
-      "id": 2
+      "id": 2,
+      "favourites": [
+        {
+          "id": 3,
+          "urlImage": "https://picsum.photos/200",
+          "title": "The Dark Knight",
+          "releaseDate": "2008-07-18",
+          "genre": "Action",
+          "favourites": true
+        },
+        {
+          "id": 7,
+          "urlImage": "https://picsum.photos/200",
+          "title": "Pulp Fiction",
+          "releaseDate": "1994-10-14",
+          "genre": "Crime",
+          "favourites": true
+        }
+      ]
+    },
+    {
+      "email": "mario@email.it",
+      "password": "$2a$10$BVIgwUBRTmyWr55KbvrPwu.9EjINEt278iW5dOfTZcYkjCb1mhrXe",
+      "name": "mario",
+      "id": 3,
+      "favourites": []
+    },
+    {
+      "email": "butta@email.it",
+      "password": "$2a$10$p2saXPWmVMlXi5B974LFzuBnr7LkdDPiIng9oXhn8hAIkjgyN4FuC",
+      "name": "beatice bbbutta",
+      "id": 4
     }
   ],
-  "movies-popular": [],
+  "movies-popular": [
+    {
+      "id": 1,
+      "urlImage": "https://picsum.photos/200",
+      "title": "The Godfather",
+      "releaseDate": "1972-03-24",
+      "genre": "Crime",
+      "favourites": false
+    },
+    {
+      "id": 3,
+      "urlImage": "https://picsum.photos/200",
+      "title": "The Dark Knight",
+      "releaseDate": "2008-07-18",
+      "genre": "Action",
+      "favourites": false
+    },
+    {
+      "id": 4,
+      "urlImage": "https://picsum.photos/200",
+      "title": "12 Angry Men",
+      "releaseDate": "1957-04-10",
+      "genre": "Drama",
+      "favourites": false
+    },
+    {
+      "id": 5,
+      "urlImage": "https://picsum.photos/200",
+      "title": "Schindler's List",
+      "releaseDate": "1993-12-15",
+      "genre": "Biography",
+      "favourites": false
+    },
+    {
+      "id": 6,
+      "urlImage": "https://picsum.photos/200",
+      "title": "The Lord of the Rings: The Return of the King",
+      "releaseDate": "2003-12-17",
+      "genre": "Adventure",
+      "favourites": false
+    },
+    {
+      "id": 7,
+      "urlImage": "https://picsum.photos/200",
+      "title": "Pulp Fiction",
+      "releaseDate": "1994-10-14",
+      "genre": "Crime",
+      "favourites": false
+    },
+    {
+      "id": 8,
+      "urlImage": "https://picsum.photos/200",
+      "title": "The Good, the Bad and the Ugly",
+      "releaseDate": "1966-12-29",
+      "genre": "Western",
+      "favourites": false
+    },
+    {
+      "id": 9,
+      "urlImage": "https://picsum.photos/200",
+      "title": "Fight Club",
+      "releaseDate": "1999-10-15",
+      "genre": "Drama",
+      "favourites": false
+    },
+    {
+      "id": 10,
+      "urlImage": "https://picsum.photos/200",
+      "title": "Forrest Gump",
+      "releaseDate": "1994-07-06",
+      "genre": "Drama",
+      "favourites": false
+    },
+    {
+      "id": 11,
+      "urlImage": "https://picsum.photos/200",
+      "title": "Inception",
+      "releaseDate": "2010-07-16",
+      "genre": "Action",
+      "favourites": false
+    },
+    {
+      "id": 12,
+      "urlImage": "https://picsum.photos/200",
+      "title": "The Matrix",
+      "releaseDate": "1999-03-31",
+      "genre": "Action",
+      "favourites": false
+    },
+    {
+      "id": 13,
+      "urlImage": "https://picsum.photos/200",
+      "title": "Goodfellas",
+      "releaseDate": "1990-09-19",
+      "genre": "Crime",
+      "favourites": false
+    },
+    {
+      "id": 14,
+      "urlImage": "https://picsum.photos/200",
+      "title": "City of God",
+      "releaseDate": "2002-02-08",
+      "genre": "Crime",
+      "favourites": false
+    },
+    {
+      "id": 15,
+      "urlImage": "https://picsum.photos/200",
+      "title": "Se7en",
+      "releaseDate": "1995-09-22",
+      "genre": "Crime",
+      "favourites": false
+    },
+    {
+      "id": 16,
+      "urlImage": "https://picsum.photos/200",
+      "title": "The Silence of the Lambs",
+      "releaseDate": "1991-02-14",
+      "genre": "Thriller",
+      "favourites": false
+    },
+    {
+      "id": 17,
+      "urlImage": "https://picsum.photos/200",
+      "title": "The Usual Suspects",
+      "releaseDate": "1995-09-15",
+      "genre": "Crime",
+      "favourites": false
+    },
+    {
+      "id": 18,
+      "urlImage": "https://picsum.photos/200",
+      "title": "Léon: The Professional",
+      "releaseDate": "1994-11-18",
+      "genre": "Crime",
+      "favourites": false
+    },
+    {
+      "id": 19,
+      "urlImage": "https://picsum.photos/200",
+      "title": "Saving Private Ryan",
+      "releaseDate": "1998-07-24",
+      "genre": "Drama",
+      "favourites": false
+    },
+    {
+      "id": 20,
+      "urlImage": "https://picsum.photos/200",
+      "title": "Interstellar",
+      "releaseDate": "2014-11-07",
+      "genre": "Sci-Fi",
+      "favourites": false
+    }
+  ],
   "favourites": []
 }

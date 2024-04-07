@@ -1,26 +1,30 @@
-<nav class="navbar navbar-expand-sm bg-body-tertiary">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark py-3">
   <div class="container-fluid">
+    <a class="navbar-brand fw-bold fs-4 fw-bold">SchipFlix</a>
     <button
       class="navbar-toggler"
       type="button"
       data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
       aria-expanded="false"
       aria-label="Toggle navigation"
     >
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a
-            class="nav-link active"
+            class="nav-link"
             aria-current="page"
             *ngIf="!isUserLoggedIn"
             routerLink="/"
-            >Login</a
+            routerLinkActive="active"
           >
+            Login
+          </a>
         </li>
         <li class="nav-item">
           <a
@@ -28,23 +32,25 @@
             aria-current="page"
             *ngIf="!isUserLoggedIn"
             routerLink="/register"
-            >Register</a
           >
+            Register
+          </a>
         </li>
-        <!-- <li class="nav-item" *ngIf="isUserLoggedIn">
-          <a class="nav-link" routerLink="/dashboard">Dashboard</a>
-        </li> -->
-        <li class="nav-item dropdown" *ngIf="isUserLoggedIn">
+
+        <li class="nav-link dropdown" *ngIf="isUserLoggedIn">
           <a
-            class="nav-link dropdown-toggle"
+            class="nav-link dropdown-toggle text-white"
             (click)="show = !show"
             role="button"
-            data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            Account
+            <fa-icon [icon]="faUser" class="fs-5"></fa-icon>
           </a>
-          <ul class="dropdown-menu" [ngClass]="{show}">
+          <ul
+            class="dropdown-menu"
+            [class.show]="show"
+            aria-labelledby="navbarDropdown"
+          >
             <li>
               <a class="dropdown-item" routerLink="/userProfile"
                 >User Profile</a
@@ -63,8 +69,9 @@
           </ul>
         </li>
       </ul>
-      <button (click)="logout()" *ngIf="isUserLoggedIn" class="btn btn-danger">
-        Esci
+
+      <button *ngIf="isUserLoggedIn" class="btn btn-danger" (click)="logout()">
+        <fa-icon [icon]="faexit"></fa-icon>
       </button>
     </div>
   </div>

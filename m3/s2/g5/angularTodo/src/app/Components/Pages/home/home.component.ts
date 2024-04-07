@@ -28,9 +28,6 @@ export class HomeComponent {
         this.todoSvc.getUsername(todo, user);
       });
     });
-
-    // this.todos = this.todoSvc.getAllTasks();
-    // this.users = this.userSvc.getAllUsers();
   }
 
   searchUserName() {

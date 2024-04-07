@@ -1,0 +1,20 @@
+.card {
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+  }
+}
+
+button {
+  border: none;
+  background: none;
+}
+.dont-like {
+  color: grey;
+}
+.favourites {
+  color: red;
+  font-size: 20px;
+}

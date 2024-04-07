@@ -1,11 +1,13 @@
+import { IUser } from './../Interface/i-user';
 import { Injectable } from '@angular/core';
-import { IUser } from '../Interface/i-user';
+
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { BehaviorSubject, Observable, map, tap } from 'rxjs';
+import { BehaviorSubject, Observable, map, of, tap } from 'rxjs';
 import { environment } from '../../environments/environment.development';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ILogData } from '../Interface/i-log-data';
+import { IMovie } from '../Interface/i-movie';
 
 type AccessData = {
   accessToken: string;
@@ -18,8 +20,11 @@ type AccessData = {
 export class AuthService {
   registerUrl: string = environment.registerUrl;
   loginUrl: string = environment.loginUrl;
+  userUrl: string = environment.usersUrl;
 
   syncIsLoggedIn: boolean = false;
+
+  apiUrl!: string;
 
   jwtHelper: JwtHelperService = new JwtHelperService();
 
@@ -32,10 +37,22 @@ export class AuthService {
     tap((user) => (this.syncIsLoggedIn = user))
   );
 
+  isUserRegisteredSubject = new BehaviorSubject<boolean>(false);
+  isUserRegistered$ = this.isUserRegisteredSubject.asObservable();
+
   constructor(private http: HttpClient, private router: Router) {}
 
   register(newUser: Partial<IUser>): Observable<AccessData> {
-    return this.http.post<AccessData>(this.registerUrl, newUser);
+    return this.http.post<AccessData>(this.registerUrl, newUser).pipe(
+      tap((data) => {
+        this.authSubject.next(data.user);
+        localStorage.setItem('accessData', JSON.stringify(data));
+
+        this.autoLogout(data.accessToken);
+
+        this.isUserRegisteredSubject.next(true);
+      })
+    );
   }
 
   login(loginData: ILogData): Observable<AccessData> {
@@ -47,6 +64,10 @@ export class AuthService {
         this.autoLogout(data.accessToken);
       })
     );
+  }
+
+  getAll() {
+    return this.http.get<IUser[]>(this.userUrl);
   }
 
   logout() {
@@ -63,6 +84,11 @@ export class AuthService {
     setTimeout(() => {
       this.logout();
     }, expMs);
+  }
+
+  // UPDATE DELL USER
+  updateUser(user: IUser): Observable<IUser> {
+    return this.http.patch<IUser>(`${this.userUrl}/${user.id}`, user);
   }
 
   restoreUser() {
@@ -84,6 +110,24 @@ export class AuthService {
     if (this.jwtHelper.isTokenExpired(accessData.accessToken)) return '';
 
     return accessData.accessToken;
+  }
+
+  addToFavorites(movie: IMovie, user: IUser): Observable<IUser> {
+    if (!user.favourites.some((movieFav) => movieFav.id === movie.id)) {
+      user.favourites.push(movie);
+      return this.updateUser(user);
+    }
+
+    return new Observable<IUser>();
+  }
+
+  updateMovie(movie: IMovie): Observable<IMovie> {
+    return this.http.put<IMovie>(`${this.apiUrl}/${movie.id}`, movie);
+  }
+
+  removeFromFavorites(movieId: number, user: IUser): Observable<IUser> {
+    user.favourites = user.favourites.filter((movie) => movie.id !== movieId);
+    return this.updateUser(user);
   }
 
   errors(err: any) {

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { ILogData } from '../../Interface/i-log-data';
+import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-login',
@@ -10,15 +11,15 @@ import { ILogData } from '../../Interface/i-log-data';
 })
 export class LoginComponent {
   loginData: ILogData = {
-    email: '',
-    password: '',
+    email: 'antonio@email.it',
+    password: 'password',
   };
-
+  faLogin = faRightToBracket;
   constructor(private authSvc: AuthService, private router: Router) {}
 
   signIn() {
     this.authSvc.login(this.loginData).subscribe((data) => {
-      this.router.navigate(['/movieList']);
+      this.router.navigate(['movieList']);
     });
   }
 }

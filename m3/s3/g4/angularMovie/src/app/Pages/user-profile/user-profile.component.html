@@ -1,1 +1,29 @@
-<p>user-profile works!</p>
+<div class="mt-4 mb-3">
+  <h1>Benvenuto {{ user?.name | capitilize }}</h1>
+  <p><span class="fw-bold">Email:</span> {{ user?.email }}</p>
+</div>
+<hr class="border border-black container-fluid" />
+<h4 *ngIf="moviesArr.length === 0">No favourites movie...</h4>
+<div *ngIf="moviesArr.length > 0">
+  <h3>Favourites Movies:</h3>
+  <div class="row row-cols-1 row-cols-md-4 g-4 mt-1">
+    <div *ngFor="let movie of moviesArr; let i = index" class="col">
+      <div class="card">
+        <img [src]="movie.urlImage" class="card-img-top" />
+        <div class="card-body">
+          <h5 class="card-title">{{ movie.title }}</h5>
+          <p class="card-text">{{ movie.genre }}</p>
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+          <small class="text-body-secondary">{{ movie.releaseDate }} </small>
+          <button (click)="toggleFavourite(movie)">
+            <fa-icon
+              [icon]="faBucket"
+              [ngClass]="{ favourites: movie.favourites }"
+            ></fa-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

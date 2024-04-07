@@ -6,5 +6,5 @@ export interface IUser {
   email: string;
   password?: string;
 
-  favourites?: IMovie[];
+  favourites: IMovie[];
 }
