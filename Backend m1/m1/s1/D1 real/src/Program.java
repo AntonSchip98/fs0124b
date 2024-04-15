@@ -1,14 +1,16 @@
 
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Program {
     public static void main(String[] args) {
-
+        String[] arr = {"ciao", "miao", "bau", "coccode", "bru"};
+System.out.println(Arrays.toString(insertInArr(arr, "cane")));
 //System.out.println(concatString());
 //System.out.println(perimeter());
 //System.out.println(evenOrOdd());
-        System.out.println(trianglePerimeter());
+       // System.out.println(trianglePerimeter());
     }
     public static int multiply(int n1, int n2){
         return n1 * n2;
@@ -19,11 +21,10 @@ public class Program {
     }
 
     public static String[] insertInArr(String[] arr, String newString){
-        String[] newArr = {arr[0], arr[1], newString, arr[2], arr[3], arr[4]};
-        if (arr.length == 5) {
-
-
+        if (arr.length != 5) {
+            throw new IllegalArgumentException("L'array deve contenere esattamente 5 elementi");
         }
+        String[] newArr = {arr[0], arr[1], newString, arr[2], arr[3], arr[4]};
         return newArr;
     }
 
