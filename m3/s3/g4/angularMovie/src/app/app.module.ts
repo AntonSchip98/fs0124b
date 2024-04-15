@@ -9,7 +9,6 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptor } from './auth/auth.interceptor';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { CapitilizePipe } from './Pipe/capitilize.pipe';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],

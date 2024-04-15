@@ -1,5 +1,10 @@
 <div class="mt-4 mb-3">
-  <h1>Benvenuto {{ user?.name | capitilize }}</h1>
+  <div class="row justify-content-center align-items-center">
+    <h1 class="col-11">Benvenuto {{ user?.name | capitilize }}</h1>
+    <button (click)="onDeleteCurrentUserClick()" class="col-1 btn btn-danger">
+      <fa-icon [icon]="faUserDelete" class="px-0"></fa-icon>
+    </button>
+  </div>
   <p><span class="fw-bold">Email:</span> {{ user?.email }}</p>
 </div>
 <hr class="border border-black container-fluid" />

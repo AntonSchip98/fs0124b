@@ -1,22 +1,6 @@
 {
   "users": [
     {
-      "email": "antonio@email.it",
-      "password": "$2a$10$AVrghetfNUQ3tiFzz6lOaOTyqSQj690c.dNWS3fZpXknwMCMXVqNW",
-      "name": "antonio",
-      "id": 1,
-      "favourites": [
-        {
-          "id": 1,
-          "urlImage": "https://picsum.photos/200",
-          "title": "The Godfather",
-          "releaseDate": "1972-03-24",
-          "genre": "Crime",
-          "favourites": true
-        }
-      ]
-    },
-    {
       "email": "beatrice@email.it",
       "password": "$2a$10$QSjJHUOuf.IDDDPLvAX8W.7ZbInolD6jM.RHHJFtV69j71v0knDae",
       "name": "beatrice",
@@ -41,17 +25,34 @@
       ]
     },
     {
-      "email": "mario@email.it",
-      "password": "$2a$10$BVIgwUBRTmyWr55KbvrPwu.9EjINEt278iW5dOfTZcYkjCb1mhrXe",
-      "name": "mario",
-      "id": 3,
-      "favourites": []
+      "email": "antonio@email.it",
+      "password": "$2a$10$U2k7bG6zk/.6A.P.VarY6OAEs2KWn6o.xQifes2RrrBHO3bD03fla",
+      "name": "antonio",
+      "id": 5,
+      "favourites": [
+        {
+          "id": 3,
+          "urlImage": "https://picsum.photos/200",
+          "title": "The Dark Knight",
+          "releaseDate": "2008-07-18",
+          "genre": "Action",
+          "favourites": true
+        },
+        {
+          "id": 1,
+          "urlImage": "https://picsum.photos/200",
+          "title": "The Godfather",
+          "releaseDate": "1972-03-24",
+          "genre": "Crime",
+          "favourites": true
+        }
+      ]
     },
     {
-      "email": "butta@email.it",
-      "password": "$2a$10$p2saXPWmVMlXi5B974LFzuBnr7LkdDPiIng9oXhn8hAIkjgyN4FuC",
-      "name": "beatice bbbutta",
-      "id": 4
+      "email": "ciao@email.it",
+      "password": "$2a$10$yNLHXP6yqcjeNK77Bc5bouvYUh/kvVmj9VhSWlST4gJ5sQLRfzzbe",
+      "name": "ciao",
+      "id": 6
     }
   ],
   "movies-popular": [

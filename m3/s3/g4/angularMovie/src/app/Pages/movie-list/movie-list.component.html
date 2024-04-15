@@ -1,19 +1,23 @@
-<div class="row row-cols-1 row-cols-md-4 g-4 mt-4">
-  <div *ngFor="let movie of movieArr" class="col">
-    <div class="card">
-      <img [src]="movie.urlImage" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">{{ movie.title | truncateHtml : 30 }}</h5>
-        <p class="card-text">{{ movie.genre }}</p>
-      </div>
-      <div class="card-footer d-flex justify-content-between">
-        <small class="text-body-secondary">{{ movie.releaseDate }} </small>
-        <button (click)="toggleFavourite(movie)">
-          <fa-icon
-            [icon]="faHeart"
-            [ngClass]="{ favourites: movie.favourites }"
-          ></fa-icon>
-        </button>
+<div class="container">
+  <h1 class="fw-bold mt-4">Movie List:</h1>
+  <hr class="border border-black container-fluid" />
+  <div class="row row-cols-1 row-cols-md-4 g-4 mt-2">
+    <div *ngFor="let movie of movieArr" class="col">
+      <div class="card">
+        <img [src]="movie.urlImage" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{ movie.title | truncateHtml : 30 }}</h5>
+          <p class="card-text">{{ movie.genre }}</p>
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+          <small class="text-body-secondary">{{ movie.releaseDate }} </small>
+          <button (click)="toggleFavourite(movie)">
+            <fa-icon
+              [icon]="faHeart"
+              [ngClass]="{ favourites: movie.favourites }"
+            ></fa-icon>
+          </button>
+        </div>
       </div>
     </div>
   </div>

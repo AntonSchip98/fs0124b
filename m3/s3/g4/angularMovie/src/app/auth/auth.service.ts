@@ -1,8 +1,7 @@
 import { IUser } from './../Interface/i-user';
 import { Injectable } from '@angular/core';
-
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { BehaviorSubject, Observable, map, of, tap } from 'rxjs';
+import { BehaviorSubject, Observable, map, of, tap, throwError } from 'rxjs';
 import { environment } from '../../environments/environment.development';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
@@ -128,6 +127,22 @@ export class AuthService {
   removeFromFavorites(movieId: number, user: IUser): Observable<IUser> {
     user.favourites = user.favourites.filter((movie) => movie.id !== movieId);
     return this.updateUser(user);
+  }
+
+  deleteCurrentUser(): Observable<IUser> {
+    const user = this.authSubject.getValue();
+
+    if (!user) {
+      return throwError(new Error('Nessun utente attualmente loggato'));
+    }
+
+    return this.http.delete<IUser>(`${this.userUrl}/${user.id}`).pipe(
+      tap(() => {
+        this.authSubject.next(null);
+        localStorage.removeItem('accessData');
+        this.router.navigate(['/']);
+      })
+    );
   }
 
   errors(err: any) {

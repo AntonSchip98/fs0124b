@@ -53,6 +53,9 @@ export class GenericService {
       })
     );
   }
+  deleteUser(user: IUser) {
+    return this.http.delete<IMovie>(this.userUrl + '/' + user.id);
+  }
   // getAllSmart<T>(): Observable<T[]> {
   //   return this.http.get<T[]>(this.apiUrl);
   // }

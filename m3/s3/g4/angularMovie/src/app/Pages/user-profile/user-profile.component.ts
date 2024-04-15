@@ -4,7 +4,9 @@ import { AuthService } from '../../auth/auth.service';
 import { GenericService } from '../../Service/generic.service';
 import { IUser } from '../../Interface/i-user';
 import { environment } from '../../../environments/environment.development';
-import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { faTrashCan, faUserXmark } from '@fortawesome/free-solid-svg-icons';
+import { tap } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-profile',
@@ -13,12 +15,15 @@ import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 })
 export class UserProfileComponent {
   movieUrl: string = environment.moviesUrl;
+  userUrl: string = environment.usersUrl;
+
   moviesArr: IMovie[] = [];
   user: IUser | undefined;
 
   constructor(
     private authSvc: AuthService,
-    private genericSvc: GenericService
+    private genericSvc: GenericService,
+    private router: Router
   ) {}
   ngOnInit() {
     this.authSvc.user$.subscribe((user) => {
@@ -30,6 +35,7 @@ export class UserProfileComponent {
     });
   }
   faBucket = faTrashCan;
+  faUserDelete = faUserXmark;
 
   loadUserFavoriteMovies(): void {
     this.genericSvc.getAll().subscribe((movies) => {
@@ -44,6 +50,20 @@ export class UserProfileComponent {
     this.authSvc.removeFromFavorites(movie.id, this.user).subscribe(() => {
       console.log("Film rimosso dai preferiti dell'utente.");
       this.moviesArr = this.moviesArr.filter((m) => m.id !== movie.id);
+    });
+  }
+
+  onDeleteCurrentUserClick() {
+    this.authSvc.deleteCurrentUser().subscribe({
+      next: () => {
+        console.log('Utente eliminato con successo');
+      },
+      error: (err) => {
+        console.error(
+          "Si è verificato un errore durante l'eliminazione dell'utente:",
+          err
+        );
+      },
     });
   }
 }
