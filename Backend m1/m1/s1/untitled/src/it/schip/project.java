@@ -9,8 +9,10 @@ public class project {
         System.out.println(annoBisestile(2021));
 */
         /*System.out.println(swiiiitc((4)));*/
-        /*System.out.println(whhile());*/
-        countdown(10);
+        whhile();
+        /*countdown(10);*/
+
+
 
     }
 
@@ -61,13 +63,28 @@ public class project {
         return numStr;
     }
 
-    public static String whhile(){
+    public static void whhile(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Inserisci una stringa");
-        String[] chars = scanner.nextLine().split("");
-        String str = String.join(",", chars);
+       String input;
+       String newStr;
 
-        return str;
+
+        while (true){
+            System.out.println("Inserisci una stringa");
+            input = scanner.nextLine();
+
+            if (":q".equals(input)){
+                System.out.println("Fine While.");
+                break;
+            }
+
+            String[] chars = input.split("");
+            newStr = String.join(",", chars);
+            System.out.println(newStr);
+
+        }
+
+
     }
 
     public static void countdown(int num){
