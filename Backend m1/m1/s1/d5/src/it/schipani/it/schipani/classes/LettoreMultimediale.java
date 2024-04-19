@@ -11,7 +11,7 @@ public class LettoreMultimediale {
         this.elementi = new ElementoMultimediale[5];
     }
 
-/*questo metodo, mi permette di capire tramite console quale elemento multimediale sto cercando di inserire nel lettore*/
+/*questo metodo, mi permette di capire tramite console quale elemento multimediale sto cercando di inserire nel lettore e mi richiede i dati relative ad esso*/
     public void addElementToLettore() {
         Scanner sc = new Scanner(System.in);
         for (int i = 0; i < 5; i++) {
@@ -60,6 +60,7 @@ public class LettoreMultimediale {
 
     }
 
+    /* metodo per trovare un elemento nell'istanza lettoreMultimediale tramite console, inserendo un int compreso tra 1 e 5, 0 chiude lo scanner*/
     public  void eseguiElementiMultimediali() {
         Scanner scanner = new Scanner(System.in);
         int scelta;
@@ -74,11 +75,7 @@ public class LettoreMultimediale {
             }
         } while (scelta != 0);
     }
-    public void eseguiElementInLettore(int index) {
 
-        elementi[index].eseguiElemento();
-
-    }
 
     public EM[] getElementi() {
         return elementi;
