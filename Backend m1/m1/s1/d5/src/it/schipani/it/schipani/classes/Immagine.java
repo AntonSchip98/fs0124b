@@ -9,7 +9,6 @@ public class Immagine extends ElementoMultimediale {
     public Immagine(int luminosita, String titolo) {
         super(titolo, 0);
         this.luminosita = luminosita >= 0 && luminosita <= 5 ? luminosita : 3;
-
     }
 
     /*versione play dell immagine*/
