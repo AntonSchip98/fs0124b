@@ -47,7 +47,7 @@ public class Main {
                     throw new NumException();
                 }
             }catch (NumException e){
-                System.out.println(e.getMessage());
+                log.error("L'index deve essere compreso tra 1 e 5");
                 continue;
             }
 
@@ -61,7 +61,7 @@ public class Main {
                     throw new NumException();
                 }
             }catch (NumException e){
-                System.out.println(e.getMessage());
+                log.error("Il numero deve essere compreso tra 1 e 10");
                 continue;
             }
             for (int i = 0; i < 5; i++) {
