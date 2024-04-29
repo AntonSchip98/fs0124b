@@ -118,7 +118,7 @@ public class FileCatalogoService implements CatalogoService {
                     save();
                 },
                 () -> {
-                    log.error("L'elemento con ISBN " + ISBN + " non esiste nel catalogo");
+                    log.error("L'elemento con ISBN {} non esiste nel catalogo", ISBN);
 
                 }
         );
@@ -133,7 +133,7 @@ public class FileCatalogoService implements CatalogoService {
         item.ifPresentOrElse(
                 i -> log.debug("{}", i),
                 () -> {
-                    log.error("L'elemento con ISBN " + ISBN + " non è presente nel catalogo");
+                    log.error("L'elemento con ISBN {} non è presente nel catalogo", ISBN);
                 });
     }
 
@@ -147,7 +147,7 @@ public class FileCatalogoService implements CatalogoService {
         item.ifPresentOrElse(
                 i -> log.debug("{}", i),
                 () -> {
-                    log.error("L'elemento con anno di pubblicazione " + yearOfPublication + " non è presente nel catalogo");
+                    log.error("L'elemento con anno di pubblicazione {} non è presente nel catalogo", yearOfPublication);
                 }
         );
     }
@@ -162,7 +162,7 @@ public class FileCatalogoService implements CatalogoService {
         item.ifPresentOrElse(
                 i -> log.debug("{}", i),
                 ()->{
-                    log.error("L'elemento con autore " + author + " non è presente nel catalogo");
+                    log.error("L'elemento con autore {} non è presente nel catalogo", author);
                 }
         );
     }

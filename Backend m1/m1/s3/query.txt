@@ -1,0 +1,44 @@
+SELECT *
+FROM epicode.clienti
+WHERE nome = 'Mario' OR anno_di_nascita = 1982;
+
+SELECT * FROM epicode."Fatture"
+WHERE iva = 20.0;
+
+SELECT * FROM epicode.prodotti
+WHERE EXTRACT (YEAR FROM data_attivazione) = 2017;
+
+SELECT * FROM epicode."Fatture"
+WHERE importo < 1000;
+
+SELECT f.numero_fattura, f.importo, f.data_fattura, f.iva AS nome_fornitore
+FROM epicode."Fatture" f
+JOIN epicode.fornitori fo ON f.numero_fornitore = fo.numero_fornitore;
+
+
+SELECT EXTRACT(YEAR FROM data_fattura) AS anno, COUNT(numero_fattura) AS numero_fatture
+FROM epicode."Fatture"
+WHERE iva = 20.0
+GROUP BY anno;
+
+
+SELECT 
+    EXTRACT(YEAR FROM data_fattura) AS anno,
+    COUNT(numero_fattura) AS numero_fatture,
+    SUM(importo) AS somma_importi
+FROM 
+    epicode."Fatture"
+GROUP BY 
+    anno;
+
+
+SELECT 
+    EXTRACT(YEAR FROM data_fattura) AS anno
+FROM 
+    epicode."Fatture"
+WHERE 
+    tipologia = 'Vendite'
+GROUP BY 
+    anno
+HAVING 
+    COUNT(*) > 2;
