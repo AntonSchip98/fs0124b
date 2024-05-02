@@ -1,8 +1,6 @@
-package it.schipani.classes;
+package it.schipani.dao;
 
 import jakarta.persistence.*;
-
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.StringJoiner;
 

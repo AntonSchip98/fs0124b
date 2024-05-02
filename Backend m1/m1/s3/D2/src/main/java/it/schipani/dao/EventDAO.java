@@ -1,4 +1,4 @@
-package it.schipani.classes;
+package it.schipani.dao;
 
 
 import jakarta.persistence.EntityManager;
@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 
 
 public class EventDAO {
-    private static final Logger log = LoggerFactory.getLogger(EventDAO.class);
+  /*  private static final Logger log = LoggerFactory.getLogger(EventDAO.class);
     private final EntityManager entityManager;
 
     public EventDAO() {
@@ -36,24 +36,29 @@ public class EventDAO {
         }
     }
 
-    public Evento getById(Long id){
-        return entityManager.find(Evento.class, id);
+    public void getById(Long id) {
+        Evento ev = entityManager.find(Evento.class, id);
+        if (ev == null) {
+            log.debug("L'evento con id= "+ id +" non esiste più");
+        } else {
+            log.debug("Ho recuperato l'evento con id="+ id +": {}", ev);
+        }
     }
 
-    public void delete(Long id){
+    public void delete(Long id) {
         EntityTransaction trans = entityManager.getTransaction();
         try {
             trans.begin();
             Evento ev = entityManager.find(Evento.class, id);
-            if (ev != null){
+            if (ev != null) {
                 entityManager.remove(ev);
             }
             trans.commit();
-        }catch (Exception err){
+        } catch (Exception err) {
             if (trans != null && trans.isActive()) {
                 trans.rollback();
             }
             log.error("Errore durante l'eliminazione dell'evento", err);
         }
-    }
+    }*/
 }
