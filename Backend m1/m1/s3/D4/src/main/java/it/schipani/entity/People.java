@@ -33,15 +33,15 @@ public class People {
     public People() {
     }
 
-    public People(Long id, String name, String surname, String email,
-                  Date birthDate, Sex sex, List<Participation> participations) {
-        this.id = id;
+    public People( String name, String surname, String email,
+                  Date birthDate, Sex sex) {
+
         this.name = name;
         this.surname = surname;
         this.email = email;
         this.birthDate = birthDate;
         this.sex = sex;
-        this.participations = participations;
+
     }
 
     public Long getId() {

@@ -1,12 +1,11 @@
 package it.schipani.dao;
 
-
 import it.schipani.entity.Location;
+import it.schipani.entity.Participation;
 
-
-public class JpaLocationDao extends JpaBaseDao implements LocationDao{
+public class JpaParticipationDao extends JpaBaseDao implements ParticipationDao{
     @Override
-    public void save(Location ev) {
+    public void save(Participation ev) {
         try {
             log.debug("Saving {}", ev);
             var t = em.getTransaction();
@@ -20,8 +19,8 @@ public class JpaLocationDao extends JpaBaseDao implements LocationDao{
     }
 
     @Override
-    public Location getById(long id) {
-        return em.find(Location.class, id);
+    public Participation getById(long id) {
+        return em.find(Participation.class, id);
     }
 
     @Override
@@ -29,7 +28,7 @@ public class JpaLocationDao extends JpaBaseDao implements LocationDao{
         var t = em.getTransaction();
 
         try {
-            Location ev = em.find(Location.class, id);
+            Participation ev = em.find(Participation.class, id);
             if (ev != null) {
                 em.remove(ev);
             }

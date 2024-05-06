@@ -21,8 +21,7 @@ public class Location {
     public Location() {
     }
 
-    public Location(Long id, String nome, String citta) {
-        this.id = id;
+    public Location(String nome, String citta) {
         this.nome = nome;
         this.citta = citta;
     }
