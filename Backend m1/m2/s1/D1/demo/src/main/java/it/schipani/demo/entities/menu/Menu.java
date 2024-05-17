@@ -1,4 +1,4 @@
-package it.schipani.demo.entities;
+package it.schipani.demo.entities.menu;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,5 +1,9 @@
 package it.schipani.demo.entities;
 
+import it.schipani.demo.entities.menu.Drink;
+import it.schipani.demo.entities.menu.Menu;
+import it.schipani.demo.entities.menu.Pizza;
+import it.schipani.demo.entities.menu.Topping;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

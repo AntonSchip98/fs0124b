@@ -1,6 +1,5 @@
-package it.schipani.demo.entities;
+package it.schipani.demo.entities.menu;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 

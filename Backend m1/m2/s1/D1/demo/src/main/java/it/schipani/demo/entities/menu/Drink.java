@@ -1,23 +1,13 @@
-package it.schipani.demo.entities;
+package it.schipani.demo.entities.menu;
 
-
-
-import lombok.Getter;
-import lombok.Setter;
-
-
-@Getter
-@Setter
-public class Topping extends Item{
-
-
-    public Topping(String name, int calories, double price) {
+public class Drink extends Item {
+    public Drink(String name, int calories, double price) {
         super(name, calories, price);
     }
 
     @Override
     public String toString() {
-        return "Topping{" +
+        return "Drink{" +
                 "name='" + name + '\'' +
                 ", calories=" + calories +
                 ", price=" + price +
