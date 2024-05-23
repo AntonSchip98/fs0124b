@@ -1,6 +1,7 @@
 package it.schipani.controller;
 
 import it.schipani.entities.User;
+import it.schipani.services.ExceptionHandlingSampleService;
 import it.schipani.services.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,9 @@ public class UsersController {
 
     @Autowired
     UserService service;
+
+    @Autowired
+    ExceptionHandlingSampleService exceptionService;
 
     @PostMapping
     public ResponseEntity<User> saveUser(@RequestBody User user) {
@@ -48,15 +52,22 @@ public class UsersController {
     }
 
     @PutMapping("/{userId}")
-    public ResponseEntity<Void> updateUser(@PathVariable Long userId, @RequestBody User updatedUser) {
-        service.updateUser(userId, updatedUser);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    public ResponseEntity<User> updateUser(@PathVariable Long userId, @RequestBody User updatedUser) {
+        Optional<User> updated = service.updateUser(userId, updatedUser);
+        return updated.map(user ->
+                new ResponseEntity<>(user, HttpStatus.OK)).orElseGet(() ->
+                new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     @DeleteMapping("/{userId}")
-    public ResponseEntity<Void> deleteUser(@PathVariable Long userId) {
+    public ResponseEntity<User> deleteUser(@PathVariable Long userId) {
         service.deleteUser(userId);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
+    @GetMapping("exception")
+    public ResponseEntity<?> throwException(@RequestParam(defaultValue = "false") boolean activate) {
+        exceptionService.testExceptionHandling(activate);
+        return ResponseEntity.ok().build();
+    }
 }

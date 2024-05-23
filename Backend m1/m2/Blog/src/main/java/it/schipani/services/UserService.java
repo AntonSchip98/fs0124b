@@ -1,6 +1,5 @@
 package it.schipani.services;
 
-import it.schipani.entities.Post;
 import it.schipani.entities.User;
 
 import java.util.List;
@@ -15,9 +14,9 @@ public interface UserService {
 
     Optional<User> getUserById(Long id);
 
-    void updateUser(Long id, User u);
+    Optional<User> updateUser(Long id, User u);
 
-    void deleteUser(Long id);
+    Optional<User> deleteUser(Long id);
 
 
 }

@@ -16,15 +16,18 @@ public class Post extends BaseEntity {
     @Column(name = "Category", length = 80)
     private String category;
 
-    @Column(name = "Title", length = 80)
+    @Column(name = "Title")
     private String title;
 
     @Column(name = "Cover", length = 80)
     private String cover;
 
-    @Column(name = "Content", length = 80)
+    @Column(name = "Content", length = 2048)
     private String content;
 
     @Column(name = "Time")
     private double lectureTime;
+
+    @ManyToOne
+    private User User;
 }

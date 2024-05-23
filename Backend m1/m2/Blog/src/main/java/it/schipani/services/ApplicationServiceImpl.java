@@ -1,14 +1,20 @@
 package it.schipani.services;
 
+import it.schipani.controller.excpetions.ApiValidationException;
 import it.schipani.entities.Post;
 import it.schipani.entities.User;
 import it.schipani.repositories.PostRepository;
 import it.schipani.repositories.UserRepository;
+import it.schipani.services.dto.PostDto;
+import it.schipani.utils.EntitiesUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @Service
@@ -20,6 +26,10 @@ public class ApplicationServiceImpl implements PostService, UserService {
 
     @Autowired
     private PostRepository posts;
+
+    @Autowired
+    private EntitiesUtils utils;
+
 
     ///////////////////////////////////////////////////////////////////
     /*USERS*/
@@ -35,8 +45,8 @@ public class ApplicationServiceImpl implements PostService, UserService {
     }
 
     @Override
-    public List<Post> getAllPost() {
-        return posts.findAll();
+    public Page<Post> getAllPost(Pageable p) {
+        return posts.findAll(p);
     }
 
     @Override
@@ -45,9 +55,9 @@ public class ApplicationServiceImpl implements PostService, UserService {
     }
 
     @Override
-    public void updatePost(Long id, Post p) {
-        Optional<Post> post = posts.findById(id);
-        if (post.isPresent()){
+    public Post updatePost(Long id, Post p) {
+       /* Optional<Post> post = posts.findById(id);
+        if (post.isPresent()) {
             Post postToUpdate = post.get().builder()
                     .withCategory(p.getCategory())
                     .withTitle(p.getTitle())
@@ -55,13 +65,24 @@ public class ApplicationServiceImpl implements PostService, UserService {
                     .withContent(p.getContent())
                     .withLectureTime(p.getLectureTime())
                     .build();
-            try{
+            try {
                 posts.save(postToUpdate);
-            }catch (Exception e){
+            } catch (Exception e) {
                 log.error("{}", e);
             }
-        }else {
+        } else {
             log.error("Post with id {} not found", id);
+        }*/
+        try {
+            var post = posts.findById(id).orElseThrow();
+            utils.copy(p, post);
+            return p;
+        } catch (NoSuchElementException e) {
+            log.error(String.format("Cannot find post with id = %s", id), e);
+            throw new RuntimeException("Cannot find post...");
+        } catch (Exception e) {
+            log.error(String.format("Error deleting post with id = %s", id), e);
+            throw new RuntimeException();
         }
     }
 
@@ -92,28 +113,62 @@ public class ApplicationServiceImpl implements PostService, UserService {
     }
 
     @Override
-    public void updateUser(Long id, User u) {
+    public Optional<User> updateUser(Long id, User u) {
         Optional<User> user = users.findById(id);
-        if (user.isPresent()){
-            User userToUpdate = user.get().builder()
-                    .withFirstName(u.getFirstName())
-                    .withLastName(u.getLastName())
-                    .withEmail(u.getEmail())
-                    .withAvatar(u.getAvatar())
-                    .withBirthDate(u.getBirthDate())
-                    .build();
-            try{
-                users.save(userToUpdate);
-            }catch (Exception e){
-                log.error("{}", e);
+        if (user.isPresent()) {
+            User userToUpdate = user.get();
+
+            if (u.getFirstName() != null) {
+                userToUpdate.setFirstName(u.getFirstName());
             }
-        }else {
+            if (u.getLastName() != null) {
+                userToUpdate.setLastName(u.getLastName());
+            }
+            if (u.getEmail() != null) {
+                userToUpdate.setEmail(u.getEmail());
+            }
+            if (u.getAvatar() != null) {
+                userToUpdate.setAvatar(u.getAvatar());
+            }
+            if (u.getBirthDate() != null) {
+                userToUpdate.setBirthDate(u.getBirthDate());
+            }
+            try {
+                users.save(userToUpdate);
+                return Optional.of(userToUpdate);
+            } catch (Exception e) {
+                log.error("{}", e);
+                return Optional.empty();
+
+            }
+        } else {
             log.error("User with id {} not found", id);
+            return Optional.empty();
         }
     }
 
+
     @Override
-    public void deleteUser(Long id) {
-        users.deleteById(id);
+    public Optional<User> deleteUser(Long id) {
+        Optional<User> userOptional = users.findById(id);
+        if (userOptional.isPresent()) {
+            try {
+                users.deleteById(id);
+                return userOptional;
+            } catch (Exception e) {
+                log.error("Error deleting user with id {}: {}", id, e);
+                return Optional.empty();
+            }
+        } else {
+            log.error("User with id {} not found", id);
+            return Optional.empty();
+        }
     }
+
+  /*  @Override
+    public void testExceptionHandling(boolean activate) {
+        if (activate)
+            throw new MyProjectException("Ops... si è verificato un problema");
+    }*/
+
 }

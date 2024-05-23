@@ -2,9 +2,12 @@ package it.schipani.controller;
 
 import it.schipani.entities.Post;
 
+import it.schipani.services.ExceptionHandlingSampleService;
 import it.schipani.services.PostService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 
-import java.util.List;
+
 import java.util.Optional;
 
 @RestController
@@ -22,6 +25,9 @@ public class PostController {
 
     @Autowired
     PostService postService;
+
+    @Autowired
+    ExceptionHandlingSampleService exceptionService;
 
     @PostMapping
     public ResponseEntity<Post> savePost(@RequestBody Post post) {
@@ -36,9 +42,8 @@ public class PostController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Post>> getAllPosts() {
-        List<Post> posts = postService.getAllPost();
-        return new ResponseEntity<>(posts, HttpStatus.OK);
+    public ResponseEntity<Page<Post>> getAllPosts(Pageable p) {
+        return new ResponseEntity<>(postService.getAllPost(p), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
@@ -59,5 +64,11 @@ public class PostController {
     public ResponseEntity<Void> deletePost(@PathVariable Long id) {
         postService.deletePost(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @GetMapping("exception")
+    public ResponseEntity<?> throwException(@RequestParam(defaultValue = "false") boolean activate) {
+        exceptionService.testExceptionHandling(activate);
+        return ResponseEntity.ok().build();
     }
 }
