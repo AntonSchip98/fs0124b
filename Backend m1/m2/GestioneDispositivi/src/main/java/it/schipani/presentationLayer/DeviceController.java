@@ -1,9 +1,10 @@
-package it.schipani.controller;
+package it.schipani.presentationLayer;
 
-import it.schipani.controller.exceptions.DeviceNotFoundException;
-import it.schipani.controller.models.DeviceValidationRequest;
-import it.schipani.entities.Device;
-import it.schipani.services.DeviceServiceImpl;
+import it.schipani.businessLayer.services.exceptions.DeviceNotFoundException;
+import it.schipani.businessLayer.services.impl.DeviceServiceImpl;
+
+import it.schipani.dataLayer.entitys.Device;
+import it.schipani.presentationLayer.models.DeviceValidationRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
 import org.springframework.http.HttpStatus;

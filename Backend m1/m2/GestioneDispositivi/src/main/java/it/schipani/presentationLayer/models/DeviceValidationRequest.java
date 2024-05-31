@@ -1,7 +1,8 @@
-package it.schipani.controller.models;
+package it.schipani.presentationLayer.models;
 
-import it.schipani.entities.DeviceState;
-import it.schipani.entities.DeviceType;
+
+import it.schipani.dataLayer.entitys.DeviceState;
+import it.schipani.dataLayer.entitys.DeviceType;
 import jakarta.validation.constraints.NotNull;
 
 public record DeviceValidationRequest(
