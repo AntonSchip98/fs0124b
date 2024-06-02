@@ -1,12 +1,12 @@
 package it.schipani.businessLayer.impl;
 
-import it.schipani.businessLayer.Mapper;
-import it.schipani.businessLayer.UserService;
 import it.schipani.businessLayer.dto.LoginResponseDto;
 import it.schipani.businessLayer.dto.RegisterUserDto;
 import it.schipani.businessLayer.dto.RegisteredUserDto;
 import it.schipani.businessLayer.exceptions.InvalidLoginException;
 import it.schipani.businessLayer.exceptions.PersistEntityException;
+import it.schipani.businessLayer.services.Mapper;
+import it.schipani.businessLayer.services.UserService;
 import it.schipani.config.JwtUtils;
 import it.schipani.dataLayer.entities.RoleEntity;
 import it.schipani.dataLayer.entities.UserEntity;
@@ -27,16 +27,14 @@ import java.util.stream.Stream;
 
 @Service
 @Slf4j
-/*questo service è un'implementazione del servizio utente che fornisce metodi per la registrazione,
+/*questo service è un'implementazione dello UserService che fornisce metodi per la registrazione,
  login e recupero delle informazioni di un utente. */
 public class UserServiceImpl implements UserService {
-
     @Autowired
     PasswordEncoder encoder;
 
     @Autowired
     UserRepository users;
-
     @Autowired
     private RoleRepository roles;
 
@@ -52,6 +50,7 @@ public class UserServiceImpl implements UserService {
     Mapper<UserEntity, RegisteredUserDto> mapRegisteredUser;
     @Autowired
     Mapper<UserEntity, LoginResponseDto> mapLogin;
+
 
     @Override
     public RegisteredUserDto register(RegisterUserDto user) {
@@ -106,28 +105,4 @@ public class UserServiceImpl implements UserService {
             return Optional.empty();
         }
     }
-
-    @Override
-    public boolean hasRole(String username, String eventManager) {
-        try {
-            // Trova l'utente nel database
-            UserEntity user = users.findOneByUsername(username).orElseThrow();
-
-            // Trova il ruolo nel database con lo stesso nome specificato
-            RoleEntity role = roles.findOneByName(eventManager).orElse(null);
-
-            // Se l'utente e il ruolo esistono nel database
-            if (role != null) {
-                // Controlla se l'utente ha il ruolo specificato
-                return user.getRoles().contains(role);
-            } else {
-                // Se l'utente o il ruolo non esistono, restituisci false
-                return false;
-            }
-        } catch (Exception e) {
-            log.error("Error checking user role", e);
-            return false;
-        }
-    }
 }
-

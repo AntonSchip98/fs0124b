@@ -1,10 +1,10 @@
 package it.schipani.config;
 
-
-import it.schipani.businessLayer.Mapper;
 import it.schipani.businessLayer.dto.LoginResponseDto;
 import it.schipani.businessLayer.dto.RegisterUserDto;
 import it.schipani.businessLayer.dto.RegisteredUserDto;
+import it.schipani.businessLayer.services.Mapper;
+import it.schipani.dataLayer.entities.RoleEntity;
 import it.schipani.dataLayer.entities.UserEntity;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -28,7 +28,7 @@ public class BeansConfiguration {
         return (input) -> RegisteredUserDto.builder() //
                 .withId(input.getId()) //
                 .withUsername(input.getUsername()) //
-                .withRoles(input.getRoles().stream().map(r -> r.getName()).toList()) //
+                .withRoles(input.getRoles().stream().map(RoleEntity::getName).toList()) //
                 .build();
     }
 
@@ -38,7 +38,7 @@ public class BeansConfiguration {
         return (input) -> LoginResponseDto.builder() //
                 .withId(input.getId()) //
                 .withUsername(input.getUsername()) //
-                .withRoles(input.getRoles().stream().map(r -> r.getName()).toList()) //
+                .withRoles(input.getRoles().stream().map(RoleEntity::getName).toList()) //
                 .build();
     }
 }

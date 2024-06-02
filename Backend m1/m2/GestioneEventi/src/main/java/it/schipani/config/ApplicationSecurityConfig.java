@@ -1,6 +1,5 @@
 package it.schipani.config;
 
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -9,6 +8,7 @@ import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -32,8 +32,9 @@ public class ApplicationSecurityConfig {
 
     @SuppressWarnings("removal")
     @Bean
-    AuthenticationManager authenticationManager(HttpSecurity http, //
-                                                PasswordEncoder passwordEncoder, UserDetailsService userDetailsService) throws Exception {
+    AuthenticationManager authenticationManager(HttpSecurity http, PasswordEncoder passwordEncoder,
+                                                UserDetailsService userDetailsService)
+            throws Exception {
         return http.getSharedObject(AuthenticationManagerBuilder.class) //
                 .userDetailsService(userDetailsService) //
                 .passwordEncoder(passwordEncoder) //
@@ -43,12 +44,13 @@ public class ApplicationSecurityConfig {
     @Bean
     SecurityFilterChain web(HttpSecurity http) throws Exception {
         http //
-                .csrf(c -> c.disable())//
+                .csrf(AbstractHttpConfigurer::disable)//
                 .authorizeHttpRequests(authorize -> //
                         authorize //
                                 // abilita l'accesso anonimo all'api di login
-                                .requestMatchers("/api/users/login").permitAll() //
-                                .requestMatchers("/api/roles").permitAll() //
+                                .requestMatchers("/api/users/login").permitAll()
+                                .requestMatchers(HttpMethod.POST,"/api/roles").permitAll() ////
+                                .requestMatchers(HttpMethod.POST,"/api/attendances").permitAll() ////
                                 // solo per consentire la registrazione di un utente
                                 .requestMatchers(HttpMethod.POST, "/api/users").permitAll()
                                 // tutte le altre richieste sono accessibili ad utenti autenticati
@@ -62,4 +64,5 @@ public class ApplicationSecurityConfig {
 
         return http.build();
     }
+
 }

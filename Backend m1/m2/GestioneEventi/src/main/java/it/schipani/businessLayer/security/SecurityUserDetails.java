@@ -11,12 +11,12 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.io.Serial;
 import java.util.Collection;
 
-
-/* implementa l'interfaccia UserDetails di Spring Security, utilizzata per rappresentare le informazioni di autenticazione
-e autorizzazione di un utente. La classe è annotata con Lombok per ridurre il boilerplate code.*/
 @Data
 @AllArgsConstructor
 @Builder(setterPrefix = "with")
+/* implementa l'interfaccia UserDetails di Spring Security, utilizzata per rappresentare le
+informazioni di autenticazione e autorizzazione di un utente. La classe è annotata con Lombok
+ per ridurre il boilerplate code.*/
 public class SecurityUserDetails implements UserDetails {
 
     @Serial
@@ -36,7 +36,8 @@ public class SecurityUserDetails implements UserDetails {
     private boolean enabled = true;
 
     /*Questo metodo consente di trasformare un'entità UserEntity (probabilmente un'entità JPA) in
-     un oggetto che può essere utilizzato da Spring Security per l'autenticazione e l'autorizzazione.*/
+         un oggetto che può essere utilizzato da Spring Security per l'autenticazione e
+         l'autorizzazione.*/
     public static SecurityUserDetails build(UserEntity user) {
         var authorities = user.getRoles().stream() //
                 .map(r -> new SimpleGrantedAuthority(r.getName())).toList();

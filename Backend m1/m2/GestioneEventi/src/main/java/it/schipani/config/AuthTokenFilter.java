@@ -16,15 +16,19 @@ import java.io.IOException;
 
 @Slf4j
 public class AuthTokenFilter extends OncePerRequestFilter {
+
+
     @Autowired
     JwtUtils jwt;
 
     @Autowired
     ApplicationUserDetailsService userDetailsService;
 
+
+
     @Override
-    protected void doFilterInternal(HttpServletRequest request, //
-                                    HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
+                                    FilterChain filterChain) throws ServletException, IOException {
         try {
             log.info("Processing AuthTokenFilter");
             // legge lo header
@@ -51,6 +55,4 @@ public class AuthTokenFilter extends OncePerRequestFilter {
         }
         filterChain.doFilter(request, response);
     }
-
-
 }
